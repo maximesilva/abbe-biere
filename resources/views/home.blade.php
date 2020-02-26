@@ -8,7 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-coucou tu veux voir mamie?
-{{ $date->diffForHumans() }}
+
 </body>
 </html>
