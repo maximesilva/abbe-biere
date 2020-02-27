@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->decimal('vat', 5, 2);
             $table->integer('stock');
             $table->decimal('weight', 7, 2);
+            $table->timestamps();
         });
 
 
