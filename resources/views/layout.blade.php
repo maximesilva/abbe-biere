@@ -10,16 +10,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="/css/css.css">
     <title>abbe-biere</title>
 <meta name="description" content="...">
 </head>
 
 <body>
 <header>
-    <div class="row bg-dark">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
+    <div class="row ">
+        <div class="container ">
+            <div class="align-items-center ">
+                <div class="row ">
+
+                    <div class="col-lg-12 text-center h1 ">
+                        <br>
+                        L'abbé bière
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <p>Le culte de la bière<br></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row nav">
+        <div class="container ">
+            <nav class="navbar navbar-expand-lg ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -64,24 +82,7 @@
             </nav>
         </div>
     </div>
-    <div class="row bg-warning">
-        <div class="container ">
-            <div class="align-items-center bg-warning">
-                <div class="row ">
 
-                    <div class="col-lg-12 text-center h1 ">
-                        <br>
-                        L'abbé bière
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <p>Le culte de la bière<br></p>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
 </header>
 
