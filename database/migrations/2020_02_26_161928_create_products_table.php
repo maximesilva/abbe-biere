@@ -13,6 +13,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->char('name', 250);
@@ -22,8 +23,10 @@ class CreateProductsTable extends Migration
             $table->decimal('vat', 5, 2);
             $table->integer('stock');
             $table->decimal('weight', 7, 2);
-            $table->timestamps();
         });
+
+
+
     }
 
     /**
