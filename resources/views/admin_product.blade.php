@@ -3,14 +3,15 @@
 @section('main')
 
 
-    <form>
+    <form method="post">
+@csrf
         <div class="form-group">
             <label for="category">Categorie</label>
             <select class="form-control" id="exampleFormControlSelect1">
-                <option>Blonde</option>
-                <option>Brune</option>
-                <option>Ambrée</option>
-                <option>Fruitée</option>
+                <option value="1">Blondes</option>
+                <option value="2">Brunes</option>
+                <option value="3">Ambrées</option>
+                <option value="4">Fruitées</option>
             </select>
         </div>
         <div class="form-group">

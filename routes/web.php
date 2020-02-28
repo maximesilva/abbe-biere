@@ -21,3 +21,5 @@ Route::get('/categories/{category}','CategoriesController@show');
 Route::get('cart','CartController@show');
 
 Route::get('/admin/product','ProductController@create');
+
+Route::post('/admin/product','ProductController@store');
