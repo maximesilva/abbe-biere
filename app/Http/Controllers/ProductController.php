@@ -10,4 +10,6 @@ class ProductController extends Controller
     public function show($id){
         return view ('product', ['id'=> $id]);
     }
+
+
 }
