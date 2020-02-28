@@ -15,8 +15,9 @@ class CreateProductsTable extends Migration
     {
 
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned();
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->char('name', 250);
             $table->text('description');
             $table->decimal('price');
@@ -25,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->integer('stock');
             $table->decimal('weight', 7, 2);
             $table->timestamps();
+
         });
 
 
