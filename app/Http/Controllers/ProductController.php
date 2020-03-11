@@ -13,9 +13,10 @@ class ProductController extends Controller
         return view('admin_product');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        request()->validate([
+       $request->validate([
+            'category' => 'required',
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
@@ -26,6 +27,7 @@ class ProductController extends Controller
         ]);
 
         $product = new Product();
+        $product->category_id = request('category');
         $product->name = request('name');
         $product->description = request('description');
         $product->price = request('price');
@@ -34,7 +36,7 @@ class ProductController extends Controller
         $product->stock = request('stock');
         $product->weight = request('weight');
         $product->save();
-dd($product);
+
         return redirect('admin/product');
 
     }
