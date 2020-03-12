@@ -20,14 +20,14 @@ php artisan migrate --force
 php artisan cache:clear
 
 # Clear expired password reset tokens
-php artisan auth:clear-resets
+#php artisan auth:clear-resets
 
 # Clear and cache routes
-php artisan route:clear
-php artisan route:cache
+#php artisan route:clear
+#php artisan route:cache
 
 # Clear and cache config
-php artisan config:clear
+#php artisan config:clear
 php artisan config:cache
 
 # Install node modules
