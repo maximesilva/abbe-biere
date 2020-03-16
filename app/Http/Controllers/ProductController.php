@@ -44,13 +44,11 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Product $product
+     * @return void
      */
-
-
-    public function show($id){
-        return view ('product', ['id'=> $id]);
+    public function show(Product $product) {
+        return view ('product', ['product'=> $product]);
     }
 
 
