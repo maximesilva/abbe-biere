@@ -13,13 +13,21 @@
                 <p class="card-text">TVA {{ $product->vat }} </p>
                 <p class="card-text">Stock restant : {{ $product->stock }} </p>
                 <form>
-                    <label for="quantity"> Quantité </label>
-                    <select type="number" id="quantity" name="quantity"></select>
-                    <a href="#" class="btn btn-primary">ajouter au panier</a>
+                    @if($product->stock > 0)
+                        <label for="quantity"> Quantité </label>
+                        <select type="number" id="quantity" name="quantity">
+                            @for($i = 0; $i<$product->stock; $i++)
+                                <option>{{$quantity=1+$i}}</option>
+                            @endfor
+                        </select>
+
+                        <a href="#" class="btn btn-primary">ajouter au panier</a>
+                    @else
+                        <p>Ce produit n'est plus disponible</p>
+                    @endif
                 </form>
             </div>
         </div>
     </div>
-
 
 @endsection
