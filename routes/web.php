@@ -14,7 +14,7 @@
 
 Route::get('/', 'HomeController@show');
 
-Route::get('/product/{id}','ProductController@show');
+Route::get('/product/{product}','ProductController@show');
 
 Route::get('/categories/{category}','CategoriesController@show');
 

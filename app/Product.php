@@ -8,7 +8,7 @@ class Product extends Model
 {
     public function orderline()
     {
-        return $this->hasMany(OrderLine::class);
+        return $this->hasMany('App\OrderLine');
     }
 
     public function categories()
