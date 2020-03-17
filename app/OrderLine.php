@@ -8,11 +8,11 @@ class OrderLine extends Model
 {
     public function orders()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo('App\Order');
     }
 
     public function products()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo('App\Product');
     }
 }
