@@ -17,16 +17,16 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->char('name', 250);
+            $table->string('name');
             $table->text('description');
-            $table->decimal('price');
-            $table->integer('volume');
+            $table->decimal('price', 8, 2)->unsigned();
+            $table->integer('volume')->unsigned();
             $table->decimal('vat', 5, 2);
-            $table->integer('stock');
+            $table->integer('stock')->unsigned();
             $table->decimal('weight', 7, 2);
             $table->timestamps();
 
+            $table->foreign('category_id')->references('id')->on('categories');
         });
 
 
