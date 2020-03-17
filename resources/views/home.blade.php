@@ -5,13 +5,16 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="public/img/fond_jpg.jpg" alt="First slide">
+                    <img class="d-block" src="img/fond_jpg.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="..." alt="Second slide">
+                    <img class="d-block" src="img/brune.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="..." alt="Third slide">
+                    <img class="d-block align-middle" src="img/ambree.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block align-middle" src="img/fruitee.jpg" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
