@@ -8,11 +8,11 @@ class Order extends Model
 {
     public function customers()
     {
-    return $this->belongsTo(Customer::class);
+    return $this->belongsTo('App\Customer');
     }
 
     public function orderline()
     {
-        return $this->hasOne(OrderLine::class);
+        return $this->hasOne('App\OrderLine');
     }
 }
