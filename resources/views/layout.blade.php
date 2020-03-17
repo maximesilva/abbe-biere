@@ -45,7 +45,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav navbar-left">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?page=home">Accueil<span
+                            <a class="nav-link" href="{{ route('home') }}">Accueil<span
                                     class="sr-only ">(current)</span>
                             </a>
                         </li>
@@ -54,14 +54,12 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Catégorie
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="index.php?page=categorie&cat=Blondes">Blonde</a>
-                                <a class="dropdown-item" href="index.php?page=categorie&cat=Blanches">Blanche</a>
-                                <a class="dropdown-item" href="index.php?page=categorie&cat=Brunes">Brune</a>
-                                <a class="dropdown-item" href="index.php?page=categorie&cat=Ambrées">Ambrée</a>
-                                <a class="dropdown-item" href="index.php?page=categorie&cat=Rosées">Rosée</a>
-                                <a class="dropdown-item" href="index.php?page=categorie&cat=Rubis">Rubis</a>
-                            </div>
+{{--                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--}}
+{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Blonde</a>--}}
+{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Brune</a>--}}
+{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Ambrée</a>--}}
+{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Fruitée</a>--}}
+{{--                            </div>--}}
                         </li>
                     </ul>
                     <ul class=" navbar-nav navbar-right">
