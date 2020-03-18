@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'HomeController@show')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::name('product.')->group(function () {
     Route::get('/product/{product}', 'ProductController@show')->name('show');
