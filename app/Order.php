@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    public function customers()
+    public function users()
     {
-    return $this->belongsTo('App\Customer');
+    return $this->belongsTo('App\User');
     }
 
     public function orderline()
