@@ -4,7 +4,6 @@
 
 <?php
 
-
 //$totalprice = 0;
 //
 //// fonction pour Modifier la quantité de produits dans mon panier
