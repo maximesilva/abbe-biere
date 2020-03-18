@@ -22,7 +22,7 @@ Route::name('categories.')->group(function(){
     Route::get('/categories/{category}','CategoriesController@show')->name('show');
 });
 
-Route::get('cart','CartController@show')->name('cart');
+/*Route::get('cart','CartController@show')->name('cart');*/
 
 Route::name('admin.')->prefix('/admin/')->group(function () {
     Route::get('product', 'ProductController@create')->name('product.create');
