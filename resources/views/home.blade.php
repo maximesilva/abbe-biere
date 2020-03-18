@@ -6,7 +6,14 @@
             <div class="carousel-inner ">
                 @foreach($products as $slider => $product)
                     <div class="carousel-item {{ $slider == 0 ? 'active' : '' }}">
-                        <img src="{{$product->src}}" class=""  alt="{{ $product->name }}">
+                        <div class="card" style="width: 10rem;">
+                            <img src="{{$product->src}}" class=""  alt="{{ $product->name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <p class="card-text">{{ $product->price }} €</p>
+                                <a href="#" class="btn btn-primary">ACHETER</a>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
