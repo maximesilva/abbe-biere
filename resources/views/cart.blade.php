@@ -102,7 +102,5 @@
 //
 ///*debug($_POST);
 //debug($_SESSION);*/
-//
-//
-//?>
-</form>
+?>
+
