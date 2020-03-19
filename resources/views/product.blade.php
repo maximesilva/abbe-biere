@@ -17,9 +17,9 @@
                         <form method="post">
                             @if($product->stock > 0)
                                 <label for="quantity"> Quantité </label>
-                                <select type="number" id="quantity" name="quantity">
+                                <select type="number" id="quantity" name="{{$product->id}}">
                                     @for($i = 0; $i<$product->stock; $i++)
-                                        <option>{{$quantity=1+$i}}</option>
+                                        <option value="{{$quantity=1+$i}}">{{$quantity=1+$i}}</option>
                                     @endfor
                                 </select>
                                 <button type="submit" class="btn btn-primary">Ajouter un panier</button>
@@ -32,7 +32,7 @@
             </div>
 
 
-            {{--<div class="card" style="width: 18rem;">
+           {{-- <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
@@ -44,9 +44,9 @@
                     <form>
                         @if($product->stock > 0)
                             <label for="quantity"> Quantité </label>
-                            <select type="number" id="quantity" name="quantity">
+                            <select type="number" id="quantity" name="{{$product->id}}">
                                 @for($i = 0; $i<$product->stock; $i++)
-                                    <option>{{$quantity=1+$i}}</option>
+                                    <option value="{{$quantity=1+$i}}">{{$quantity=1+$i}}</option>
                                 @endfor
                             </select>
 
@@ -56,8 +56,8 @@
                         @endif
                     </form>
                 </div>
-            </div>
-        </div>--}}
+            </div>--}}
+        </div>
     </div>
 
 @endsection
