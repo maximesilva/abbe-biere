@@ -16,7 +16,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::name('product.')->prefix('/product/')->group(function () {
     Route::get('{product}', 'ProductController@show')->name('show');
-    Route::post('{product}','CartController@addToCart')->name('addtocart');
+    Route::post('{product}','CartController@show')->name('addtocart');
 });
 
 Route::name('categories.')->group(function(){
@@ -29,5 +29,4 @@ Route::name('admin.')->prefix('/admin/')->group(function () {
     Route::get('product', 'ProductController@create')->name('product.create');
     Route::post('product', 'ProductController@store')->name('product.store');
 });
-
 
