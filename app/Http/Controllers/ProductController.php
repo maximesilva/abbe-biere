@@ -51,5 +51,26 @@ class ProductController extends Controller
         return view ('product', ['product'=> $product]);
     }
 
+    public function cart($id)
+    {
 
+        $product = Product::find($id);
+        $cart = session()->get('cart');
+
+        // if cart is empty then this the first product
+        if (!$cart) {
+
+            $cart = [
+                $id => [
+                    "name" => $product->name,
+                    "quantity" => 1,
+                    "price" => $product->price,
+                    "photo" => $product->photo
+                ]
+            ];
+
+            session()->put('cart', $cart);
+        }
+
+    }
 }

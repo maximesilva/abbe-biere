@@ -15,6 +15,7 @@
                         <p class="card-text">{{ $product->volume }} ml | TVA {{ $product->vat }} %</p>
                         <p class="card-text h5">PRIX: {{ $product->price }} € </p>
                         <form method="post">
+                            @csrf
                             @if($product->stock > 0)
                                 <label for="quantity"> Quantité </label>
                                 <select type="number" id="quantity" name="{{$product->id}}">
@@ -30,6 +31,7 @@
                     </div>
                 </div>
             </div>
+
 
 
            {{-- <div class="card" style="width: 18rem;">
