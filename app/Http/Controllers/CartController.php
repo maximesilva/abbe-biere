@@ -15,17 +15,33 @@ class CartController extends Controller
         return view('cart', ['cart' => $cart]);
     }
 
-    public function add($id, $quantity)
+    public function add(Request $request)
     {
-        $this->cartCreate();
-        $cart = session('cart');
 
-        if (isset($cart[$id])) {
-            $cart[$id] += $quantity;
+        $request->validate([
+            'id' => 'required',
+            'quantity' => 'required',
+        ]);
+
+        //si cart n'existe pas en session
+        if (!session()->exists('cart')) {
+            //on crée le panier
+            $cart[$request['id']] = $request['quantity'];
         } else {
-            $cart[$id] = $quantity;
+            //si le penier existe on le récupre
+            $cart = session()->get('cart');
+
+            //on maj la quantitée
+            if (isset($cart[$request['id']])) {
+                $cart[$request['id']] += $request['quantity'];
+            } else {
+                $cart[$request['id']] = $request['quantity'];
+            }
         }
-        session('cart', $cart);
+        //on sauve dans la session le panier
+        \session()->put('cart', $cart);
+
+        return redirect()->route('cart.show');
 
     }
 

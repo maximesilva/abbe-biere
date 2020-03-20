@@ -38,3 +38,7 @@ Route::name('cart.')->prefix('/cart/')->group(function () {
     Route::post('/clear', 'CartController@clear')->name('clear');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
