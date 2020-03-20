@@ -12,11 +12,12 @@ class CartController extends Controller
     public function show()
     {
         $cart = session('cart');
-        return view('cart',['cart'=> $cart]);
+        return view('cart', ['cart' => $cart]);
     }
 
-    public function add($id, $quantity){
-
+    public function add($id, $quantity)
+    {
+        $this->cartCreate();
         $cart = session('cart');
 
         if (isset($cart[$id])) {
@@ -28,14 +29,13 @@ class CartController extends Controller
 
     }
 
-    private function cartCreate(){
+    private function cartCreate()
+    {
 
-            if (!session()->has('cart')) {
-                session('cart', []);
-            }
+        if (!session()->has('cart')) {
+            session('cart', []);
+        }
     }
-
-
 
 
 }
