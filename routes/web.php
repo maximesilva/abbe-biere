@@ -38,6 +38,12 @@ Route::name('cart.')->prefix('/cart/')->group(function () {
     Route::post('/clear', 'CartController@clear')->name('clear');
 });
 
+Route::name('profil.')->prefix('/profil')->middleware('auth')->group(
+    function(){
+        Route::get('', 'UserController@show')->name('show');
+    }
+);
+
 
 Auth::routes();
 
