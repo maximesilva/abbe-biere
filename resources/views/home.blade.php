@@ -31,18 +31,26 @@
         </div>
         <div class="container">
             <div class="row m-0 justify-content-center">
-                <a class="col-md-6 text-center" href="{{ url('/categories/blondes') }}">
-                    <img src="/img/fond_jpg.jpg" width="100%" alt="blonde">
-                </a>
-                <a class="col-md-6" href="{{ url('/categories/brunes') }}">
-                    <img src="/img/brune.jpg" width="100%" alt="brune">
-                </a>
-                <a class="col-md-6" href="{{ url('/categories/ambrees') }}">
-                    <img src="/img/ambree.jpg" width="100%" alt="ambree">
-                </a>
-                <a class="col-md-6" href="{{ url('/categories/fruitees') }}">
-                    <img src="/img/fruitee.jpg" width="100%" alt="fruitee">
-                </a>
+                @php
+                    $categories = App\Category::all();
+                @endphp
+                @foreach($categories as $category)
+                    <a class="col-md-6 text-center" href="{{route('categories.show',$category)}}">
+                        <img src="/img/{{$category->name}}.jpg" width="100%" alt="{{$category->name}}">
+                    </a>
+                @endforeach
+{{--                <a class="col-md-6 text-center" href="{{route('categories.show',$category)}}">--}}
+{{--                    <img src="/img/{{$category->name}}.jpg" width="100%" alt="{{$category->name}}">--}}
+{{--                </a>--}}
+{{--                <a class="col-md-6" href="{{ url('/categories/brunes') }}">--}}
+{{--                    <img src="/img/brune.jpg" width="100%" alt="brune">--}}
+{{--                </a>--}}
+{{--                <a class="col-md-6" href="{{ url('/categories/ambrees') }}">--}}
+{{--                    <img src="/img/ambree.jpg" width="100%" alt="ambree">--}}
+{{--                </a>--}}
+{{--                <a class="col-md-6" href="{{ url('/categories/fruitees') }}">--}}
+{{--                    <img src="/img/fruitee.jpg" width="100%" alt="fruitee">--}}
+{{--                </a>--}}
             </div>
         </div>
         <div class="text-center" id="reassuranceLine">
