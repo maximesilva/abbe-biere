@@ -47,3 +47,4 @@ Route::name('profil.')->prefix('/profil')->middleware('auth')->group(
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

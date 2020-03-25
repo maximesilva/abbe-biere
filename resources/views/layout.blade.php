@@ -22,8 +22,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6  h1 ">
                         <img src="/img/logo.png" alt="AbbéBiere" width="100%">
-{{--                        <br>--}}
-{{--                        L'abbé bière--}}
+                        {{--                        <br>--}}
+                        {{--                        L'abbé bière--}}
                     </div>
                     <div class="col-3 text-center">
                         <img src="/img/compte.png" alt="mon compte" width="35%">
@@ -31,10 +31,10 @@
                     <div class="col-3 text-center">
                         <img src="/img/panier.png" alt="mon panier" width="35%">
                     </div>
-{{--                    <div class="col-lg-12 text-center ">--}}
-{{--                        <p>Le culte de la bière<br></p>--}}
+                    {{--                    <div class="col-lg-12 text-center ">--}}
+                    {{--                        <p>Le culte de la bière<br></p>--}}
 
-{{--                    </div>--}}
+                    {{--                    </div>--}}
 
                 </div>
             </div>
@@ -67,9 +67,22 @@
                         @endforeach
                     </ul>
                     <ul class=" navbar-nav navbar-right">
-                        <li class="nav-item text-center">
-                            <a class="nav-link" href="{{ route('login') }}">Connexion</a>
-                        </li>
+                        @if (Route::has('login'))
+                            <li class="nav-item text-center">
+                                @auth
+                                    <a class="nav-link" href="{{ route('profil.show') }}">Profil</a>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                            </li>
+                        @else
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a type="submit" class="nav-link" href="{{ route('register') }}">Register</a>
+                            </li>
+                        @endif
+                        @endauth
                         <li>
                             <div class="col-2 text-center ">
                                 <button type="button" class="btn btn-outline-warning pull-right"><a

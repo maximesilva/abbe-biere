@@ -2,7 +2,7 @@
 
 @section('main')
     <main>
-        <div class="container">
+        <div class="container bg-white">
             <ul>
                 <li>Nom : {{ $user->name }}</li>
                 <li>Prénom : {{ $user->lastname }}</li>
