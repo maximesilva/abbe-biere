@@ -19,15 +19,22 @@
     <div class="row ">
         <div class="container ">
             <div class="align-items-center ">
-                <div class="row ">
-                    <div class="col-lg-12 text-center h1 ">
-                        <br>
-                        L'abbé bière
+                <div class="row align-items-center">
+                    <div class="col-lg-6  h1 ">
+                        <img src="/img/logo.png" alt="AbbéBiere" width="100%">
+{{--                        <br>--}}
+{{--                        L'abbé bière--}}
                     </div>
-                    <div class="col-lg-12 text-center ">
-                        <p>Le culte de la bière<br></p>
+                    <div class="col-3 text-center">
+                        <img src="/img/compte.png" alt="mon compte" width="35%">
+                    </div>
+                    <div class="col-3 text-center">
+                        <img src="/img/panier.png" alt="mon panier" width="35%">
+                    </div>
+{{--                    <div class="col-lg-12 text-center ">--}}
+{{--                        <p>Le culte de la bière<br></p>--}}
 
-                    </div>
+{{--                    </div>--}}
 
                 </div>
             </div>
