@@ -10,7 +10,7 @@ class CategoriesController extends Controller
 {
     public function show(Category $category){
         $category->products;
-        $category = Product::where('category_id', );
+        $category = Product::where('category_id');
         return view ('categories', ['category'=>$category]);
     }
 }

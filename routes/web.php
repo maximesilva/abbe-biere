@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::name('product.')->prefix('/product/')->group(function () {

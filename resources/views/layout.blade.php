@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,7 +11,7 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/css.css">
     <title>abbe-biere</title>
-<meta name="description" content="...">
+    <meta name="description" content="...">
 </head>
 
 <body>
@@ -49,18 +48,29 @@
                                     class="sr-only ">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Catégorie
-                            </a>
-{{--                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--}}
-{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Blonde</a>--}}
-{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Brune</a>--}}
-{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Ambrée</a>--}}
-{{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Fruitée</a>--}}
-{{--                            </div>--}}
-                        </li>
+                        @php
+                            $categories = App\Category::all();
+                        @endphp
+                        @foreach($categories as $category)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('categories.show',$category)}}">{{$category->name}}
+                                    <span
+                                        class="sr-only ">(current)</span>
+                                </a>
+                            </li>
+                        @endforeach
+                        {{--                        <li class="nav-item dropdown">--}}
+                        {{--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"--}}
+                        {{--                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                        {{--                                Catégorie--}}
+                        {{--                            </a>--}}
+                        {{--                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--}}
+                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Blonde</a>--}}
+                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Brune</a>--}}
+                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Ambrée</a>--}}
+                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Fruitée</a>--}}
+                        {{--                            </div>--}}
+                        {{--                        </li>--}}
                     </ul>
                     <ul class=" navbar-nav navbar-right">
                         <li class="nav-item text-center">

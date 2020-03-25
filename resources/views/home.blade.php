@@ -7,7 +7,7 @@
                 @foreach($products as $slider => $product)
                     <div class="carousel-item {{ $slider == 0 ? 'active' : '' }}">
                         <div class="card" style="width: 10rem;">
-                            <img src="{{$product->src}}" class=""  alt="{{ $product->name }}">
+                            <img src="{{$product->src}}" class="" alt="{{ $product->name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <p class="card-text">{{ $product->price }} €</p>
@@ -29,19 +29,21 @@
         <div class="text-center" id="reassuranceLine">
             LIGNE DE RASSURANCE
         </div>
-        <div class="row m-0 justify-content-center">
-            <a class="col-md-6" href="{{ url('/categories/blondes') }}">
-                <img src="/img/fond_jpg.jpg" alt="blonde">
-            </a>
-            <a class="col-md-6" href="{{ url('/categories/brunes') }}">
-                <img src="/img/brune.jpg" alt="brune">
-            </a>
-            <a class="col-md-6" href="{{ url('/categories/ambrees') }}">
-                <img src="/img/ambree.jpg" alt="ambree">
-            </a>
-            <a class="col-md-6" href="{{ url('/categories/fruitees') }}">
-                <img src="/img/fruitee.jpg" alt="fruitee">
-            </a>
+        <div class="container">
+            <div class="row m-0 justify-content-center">
+                <a class="col-md-6 text-center" href="{{ url('/categories/blondes') }}">
+                    <img src="/img/fond_jpg.jpg" width="100%" alt="blonde">
+                </a>
+                <a class="col-md-6" href="{{ url('/categories/brunes') }}">
+                    <img src="/img/brune.jpg" width="100%" alt="brune">
+                </a>
+                <a class="col-md-6" href="{{ url('/categories/ambrees') }}">
+                    <img src="/img/ambree.jpg" width="100%" alt="ambree">
+                </a>
+                <a class="col-md-6" href="{{ url('/categories/fruitees') }}">
+                    <img src="/img/fruitee.jpg" width="100%" alt="fruitee">
+                </a>
+            </div>
         </div>
         <div class="text-center" id="reassuranceLine">
             AVIS CLIENT
@@ -49,5 +51,6 @@
         <div class="text-center">
             HISTOIRE
         </div>
+
     </main>
 @endsection
