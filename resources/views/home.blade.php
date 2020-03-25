@@ -6,14 +6,14 @@
             <div class="carousel-inner text-center">
                 @foreach($products as $slider => $product)
                     <div class="carousel-item {{ $slider == 0 ? 'active' : '' }}">
-                        <div class="card" style="width: 10rem;">
+
                             <img src="{{$product->src}}" class="" alt="{{ $product->name }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <p class="card-text">{{ $product->price }} €</p>
                                 <a href="#" class="btn btn-primary">ACHETER</a>
                             </div>
-                        </div>
+
                     </div>
                 @endforeach
             </div>
@@ -39,18 +39,6 @@
                         <img src="/img/{{$category->name}}.jpg" width="100%" alt="{{$category->name}}">
                     </a>
                 @endforeach
-{{--                <a class="col-md-6 text-center" href="{{route('categories.show',$category)}}">--}}
-{{--                    <img src="/img/{{$category->name}}.jpg" width="100%" alt="{{$category->name}}">--}}
-{{--                </a>--}}
-{{--                <a class="col-md-6" href="{{ url('/categories/brunes') }}">--}}
-{{--                    <img src="/img/brune.jpg" width="100%" alt="brune">--}}
-{{--                </a>--}}
-{{--                <a class="col-md-6" href="{{ url('/categories/ambrees') }}">--}}
-{{--                    <img src="/img/ambree.jpg" width="100%" alt="ambree">--}}
-{{--                </a>--}}
-{{--                <a class="col-md-6" href="{{ url('/categories/fruitees') }}">--}}
-{{--                    <img src="/img/fruitee.jpg" width="100%" alt="fruitee">--}}
-{{--                </a>--}}
             </div>
         </div>
         <div class="text-center" id="reassuranceLine">

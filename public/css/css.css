@@ -1,5 +1,18 @@
 body header{
     background-color: #231709 ;
+    color: #D9CEAD;
+}
+
+body header a {
+    color: #D9CEAD;
+}
+
+body header a:hover {
+    color: #231709;
+}
+
+.titre{
+    text-decoration-color: #5C310E;
 }
 
 body main{
@@ -8,6 +21,11 @@ body main{
 
 .nav{
     background-color: #5C310E;
+    ;
+}
+
+.carousel-item{
+    background-color: #8C5B38;
 }
 
 #reassuranceLine{

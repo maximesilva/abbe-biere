@@ -20,12 +20,11 @@
         <div class="container ">
             <div class="align-items-center ">
                 <div class="row ">
-
                     <div class="col-lg-12 text-center h1 ">
                         <br>
                         L'abbé bière
                     </div>
-                    <div class="col-lg-12 text-center">
+                    <div class="col-lg-12 text-center ">
                         <p>Le culte de la bière<br></p>
 
                     </div>
@@ -59,18 +58,6 @@
                                 </a>
                             </li>
                         @endforeach
-                        {{--                        <li class="nav-item dropdown">--}}
-                        {{--                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"--}}
-                        {{--                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                        {{--                                Catégorie--}}
-                        {{--                            </a>--}}
-                        {{--                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--}}
-                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Blonde</a>--}}
-                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Brune</a>--}}
-                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Ambrée</a>--}}
-                        {{--                                <a class="dropdown-item" href="{{ route('categories.') }}">Fruitée</a>--}}
-                        {{--                            </div>--}}
-                        {{--                        </li>--}}
                     </ul>
                     <ul class=" navbar-nav navbar-right">
                         <li class="nav-item text-center">
