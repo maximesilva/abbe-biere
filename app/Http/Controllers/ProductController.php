@@ -10,6 +10,7 @@ class ProductController extends Controller
 {
     public function create()
     {
+        //$this->authorize('view');
         return view('admin_product');
     }
 
