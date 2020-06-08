@@ -86,7 +86,7 @@
                         <li>
                             <div class="col-2 text-center ">
                                 <button type="button" class="btn btn-outline-warning pull-right"><a
-                                        href="index.php?page=panier"
+                                        href="{{route('cart.show')}}"
                                         style="color: #EAA90B"> Panier </a>
                                 </button>
                             </div>
