@@ -45,6 +45,8 @@ Route::name('profil.')->prefix('/profil')->middleware('auth')->group(
 
 
 Auth::routes();
+//ici je refais une route pour le logout car par défaut c'est un post. Pour que ca marche avec le lien je le fais en get
+Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
