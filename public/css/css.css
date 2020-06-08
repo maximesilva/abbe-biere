@@ -31,3 +31,29 @@ body main{
 #reassuranceLine{
     background-color: #5C310E;
 }
+
+/*=================category=============*/
+.category{
+    background-color: #D9CEAD;
+}
+
+.category img{
+    box-shadow: 10px 5px 5px #A98364;
+    border-radius: 10px;
+    background-color: #5C310E;
+}
+
+.category .card-body .align-bottom{
+    position: relative;
+    bottom: 0;
+}
+
+.category .btn {
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.category .outofstock {
+    border-radius: 10px;
+    background-color: gray;
+}
