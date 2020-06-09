@@ -15,7 +15,8 @@
                                 <p class="card-text align-bottom">{{ $product->volume }} ml </p>
                                 <p class="card-text align-bottom">TVA {{ $product->vat }} </p>
                                 <p class="card-text align-bottom">Stock restant : {{ $product->stock }} </p>
-                                <form>
+                                <form method="post" action="{{route('categories.add', $product->id)}}">
+                                    @csrf
                                     @if($product->stock > 0)
                                         <label for="quantity"> Quantité </label>
                                         <select type="number" id="quantity" name="{{$product->id}}">
@@ -24,7 +25,7 @@
                                             @endfor
                                         </select>
 
-                                        <a href="#" class="btn align-bottom">ajouter au panier</a>
+                                        <button type="submit" class="btn btn-primary">Ajouter un panier</button>
                                     @else
                                         <p class="outofstock">Ce produit n'est plus disponible</p>
                                     @endif

@@ -24,6 +24,7 @@ Route::name('product.')->prefix('/product/')->group(function () {
 
 Route::name('categories.')->group(function () {
     Route::get('/categories/{category}', 'CategoriesController@show')->name('show');
+    Route::post('/product/{product}', 'CartController@add')->name('add');
 });
 
 
