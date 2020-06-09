@@ -7,12 +7,16 @@
                 @foreach($products as $slider => $product)
                     <div class="carousel-item {{ $slider == 0 ? 'active' : '' }}">
 
-                            <img src="{{$product->src}}" class="" alt="{{ $product->name }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">{{ $product->price }} €</p>
-                                <a href="#" class="btn btn-primary">ACHETER</a>
-                            </div>
+                        <img src="/img/produit.png" class="" alt="{{ $product->name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text">{{ $product->price }} €</p>
+                            <form method="get" action="/product/{{$product->id}}">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <button type="submit" class="btn btn-primary">Acheter</button>
+                            </form>
+                        </div>
 
                     </div>
                 @endforeach

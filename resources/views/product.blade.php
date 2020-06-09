@@ -3,10 +3,10 @@
 @section('main')
 
     <div class="container text-center align-items-center">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
+        <div class="card mb-3" >
+            <div class="row no-gutters align-items-center">
                 <div class="col-md-4">
-                    <img src="..." class="card-img" alt="...">
+                    <img src="/img/produit.png" class="card-img" alt="...">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -14,7 +14,7 @@
                         <p class="card-text">{{ $product->description }}</p>
                         <p class="card-text">{{ $product->volume }} ml | TVA {{ $product->vat }} %</p>
                         <p class="card-text h5">PRIX: {{ $product->price }} € </p>
-                        <form method="post">
+                        <form method="post" action="">
                             @csrf
                             @if($product->stock > 0)
                                 <label for="quantity"> Quantité </label>
