@@ -17,8 +17,10 @@ class CartController extends Controller
         $cartview= [];
         foreach ($cart as $key=>$value){
             $product=Product::where('id', $key)->get();
-            array_push($cartview,$product,$value);
+            $product->quantity=$value;
+            array_push($cartview,$product);
         }
+       // dd($cartview);
         return view('cart', ['cart' => $cartview]);
     }
 
