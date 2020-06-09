@@ -11,24 +11,24 @@ class CartController extends Controller
 
     public function show()
     {
-        $cartview=[];
+
         $cart = session('cart');
         //dd($cart);
-        foreach ($cart as $key=>$item){
-            //dd($key);
-            $cartview += Product::where('id',$key)->get();
+        $cartview= [];
+        foreach ($cart as $key=>$value){
+            $product=Product::where('id', $key)->get();
+            array_push($cartview,$product,$value);
         }
-        dd($cartview);
         return view('cart', ['cart' => $cartview]);
     }
 
     public function add(Request $request)
     {
-
         $request->validate([
             'id' => 'required',
             'quantity' => 'required',
         ]);
+
 
         //si cart n'existe pas en session
         if (!session()->exists('cart')) {
