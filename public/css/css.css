@@ -57,3 +57,28 @@ body main{
     border-radius: 10px;
     background-color: gray;
 }
+
+/*=================product=============*/
+
+.product{
+    border-radius: 10px;
+    background-color: #D9CEAD;
+}
+.product button{
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.product .outofstock {
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.product img{
+    margin: 10px;
+    padding: 15px;
+    width: 80%;
+    box-shadow: 10px 5px 5px #A98364;
+    border-radius: 10px;
+    background-color: #5C310E;
+}

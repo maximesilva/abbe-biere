@@ -48,7 +48,7 @@ class CartController extends Controller
             }
         }
         //on sauve dans la session le panier
-        \session()->put('cart', $cart);
+        session()->put('cart', $cart);
 
         return redirect()->route('cart.show');
 
@@ -61,7 +61,7 @@ class CartController extends Controller
         ]);
         $cart = session()->get('cart');
         $cart[$request['id']] = $request['quantity'];
-        \session()->put('cart', $cart);
+        session()->put('cart', $cart);
         return redirect()->route('cart.show');
     }
 
