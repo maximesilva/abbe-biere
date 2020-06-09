@@ -25,7 +25,7 @@
                                             @endfor
                                         </select>
 
-                                        <button type="submit" class="btn btn-primary">Ajouter un panier</button>
+                                        <button type="submit" class="btn">Ajouter un panier</button>
                                     @else
                                         <p class="outofstock">Ce produit n'est plus disponible</p>
                                     @endif
