@@ -13,15 +13,15 @@ class CartController extends Controller
     {
 
         $cart = session('cart');
-        //dd($cart);
         $cartview= [];
+        $totalprice=0;
         foreach ($cart as $key=>$value){
-            $product=Product::where('id', $key)->get();
+            $product=Product::where('id', $key)->first();
             $product->quantity=$value;
+            $totalprice+= $product->price * $value;
             array_push($cartview,$product);
         }
-       // dd($cartview);
-        return view('cart', ['cart' => $cartview]);
+        return view('cart', ['cart' => $cartview, 'total'=>$totalprice]);
     }
 
     public function add(Request $request)

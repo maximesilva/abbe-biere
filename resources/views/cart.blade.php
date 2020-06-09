@@ -11,18 +11,18 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title h3">{{ $item[0]->name }}</h5>
-                            <p class="card-text">{{ $item[0]->description }}</p>
-                            <p class="card-text">{{ $item[0]->volume }} ml | TVA {{ $item[0]->vat }} %</p>
-                            <p class="card-text h5">PRIX: {{ $item[0]->price }} € </p>
+                            <h5 class="card-title h3">{{ $item->name }}</h5>
+                            <p class="card-text">{{ $item->description }}</p>
+                            <p class="card-text">{{ $item->volume }} ml | TVA {{ $item->vat }} %</p>
+                            <p class="card-text h5">PRIX: {{ $item->price }} € </p>
                             <form method="post">
                                 @csrf
-                                @if($item[0]->stock > 0)
+                                @if($item->stock > 0)
                                     <label for="quantity"> Quantité </label>
-                                    <input type="hidden" name="id" value="{{$item[0]->id}}">
+                                    <input type="hidden" name="id" value="{{$item->id}}">
                                     <select type="number" id="quantity" name="quantity">
                                         <option value="{{$item->quantity}}">{{$item->quantity}}</option>
-                                        @for($i = 0; $i<$item[0]->stock; $i++)
+                                        @for($i = 0; $i<$item->stock; $i++)
                                             <option value="{{$quantity=1+$i}}">{{$quantity=1+$i}}</option>
                                         @endfor
                                     </select>
@@ -31,14 +31,23 @@
                                     <p>Ce produit n'est plus disponible</p>
                                 @endif
                             </form>
-                            <p class="card-text h5">PRIX TOTAL: {{ $item[0]->price * $item->quantity }} € </p>
+                            <p class="card-text h5">PRIX TOTAL: {{ $item->price * $item->quantity }} € </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     @endforeach
-    <div>
+    <div class="container text-center align-items-center">
+        <form method="post">
+            @csrf
+            @if($item->stock > 0)
+                <p> TOTAL DE VOTRE COMMANDE : {{$total}} €</p>
+                <button type="submit" class="btn btn-primary">COMMANDER</button>
+            @else
+                <p>Ce produit n'est plus disponible</p>
+            @endif
+        </form>
 
     </div>
 
