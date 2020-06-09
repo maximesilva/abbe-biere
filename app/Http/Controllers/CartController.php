@@ -11,8 +11,15 @@ class CartController extends Controller
 
     public function show()
     {
+        $cartview=[];
         $cart = session('cart');
-        return view('cart', ['cart' => $cart]);
+        //dd($cart);
+        foreach ($cart as $key=>$item){
+            //dd($key);
+            $cartview += Product::where('id',$key)->get();
+        }
+        dd($cartview);
+        return view('cart', ['cart' => $cartview]);
     }
 
     public function add(Request $request)
