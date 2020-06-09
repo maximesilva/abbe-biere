@@ -54,6 +54,17 @@ class CartController extends Controller
 
     }
 
+    public function update(Request $request){
+        $request->validate([
+            'id' => 'required',
+            'quantity' => 'required',
+        ]);
+        $cart = session()->get('cart');
+        $cart[$request['id']] = $request['quantity'];
+        \session()->put('cart', $cart);
+        return redirect()->route('cart.show');
+    }
+
     private function cartCreate()
     {
 

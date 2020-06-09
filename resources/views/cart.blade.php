@@ -15,14 +15,16 @@
                             <p class="card-text">{{ $item->description }}</p>
                             <p class="card-text">{{ $item->volume }} ml | TVA {{ $item->vat }} %</p>
                             <p class="card-text h5">PRIX: {{ $item->price }} € </p>
-                            <form method="post">
+                            <form method="post" action="/cart/update">
                                 @csrf
                                 @if($item->stock > 0)
                                     <label for="quantity"> Quantité </label>
                                     <input type="hidden" name="id" value="{{$item->id}}">
                                     <select type="number" id="quantity" name="quantity">
-                                        <option value="{{$item->quantity}}">{{$item->quantity}}</option>
                                         @for($i = 0; $i<$item->stock; $i++)
+                                            @if($qantity=1+$i == $item->quantity)
+                                                <option value="{{$qantity=1+$i}}" selected>{{$quantity=1+$i}}</option>
+                                            @endif
                                             <option value="{{$quantity=1+$i}}">{{$quantity=1+$i}}</option>
                                         @endfor
                                     </select>
@@ -39,7 +41,7 @@
         </div>
     @endforeach
     <div class="container text-center align-items-center">
-        <form method="post">
+        <form method="post" >
             @csrf
             @if($item->stock > 0)
                 <p> TOTAL DE VOTRE COMMANDE : {{$total}} €</p>
