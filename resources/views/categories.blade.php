@@ -15,16 +15,16 @@
                                 <p class="card-text align-bottom">{{ $product->volume }} ml </p>
                                 <p class="card-text align-bottom">TVA {{ $product->vat }} </p>
                                 <p class="card-text align-bottom">Stock restant : {{ $product->stock }} </p>
-                                <form method="post" action="{{route('categories.add', $product->id)}}">
+                                <form method="post" action="/product/{{$product->id}}">
                                     @csrf
                                     @if($product->stock > 0)
                                         <label for="quantity"> Quantité </label>
+                                        <input type="hidden" name="id" value="{{$product->id}}">
                                         <select type="number" id="quantity" name="{{$product->id}}">
                                             @for($i = 0; $i<$product->stock; $i++)
                                                 <option value="{{$quantity=1+$i}}">{{$quantity=1+$i}}</option>
                                             @endfor
                                         </select>
-
                                         <button type="submit" class="btn">Ajouter un panier</button>
                                     @else
                                         <p class="outofstock">Ce produit n'est plus disponible</p>

@@ -31,7 +31,6 @@ class CartController extends Controller
             'quantity' => 'required',
         ]);
 
-
         //si cart n'existe pas en session
         if (!session()->exists('cart')) {
             //on crée le panier

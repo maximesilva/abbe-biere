@@ -12,10 +12,7 @@
 */
 Route::name('home.')->prefix('/')->group(function (){
     Route::get('', 'HomeController@index')->name('show');
-    Route::post('{product}', 'ProductController@show');
 });
-
-
 
 Route::name('product.')->prefix('/product/')->group(function () {
     Route::get('{product}', 'ProductController@show')->name('show');
@@ -24,9 +21,8 @@ Route::name('product.')->prefix('/product/')->group(function () {
 
 Route::name('categories.')->group(function () {
     Route::get('/categories/{category}', 'CategoriesController@show')->name('show');
-    Route::post('/product/{product}', 'CartController@add')->name('add');
+    Route::post('/categories/{category}', 'CartController@add')->name('add');
 });
-
 
 Route::name('admin.')->prefix('/admin/')->group(function () {
     Route::get('product', 'ProductController@create')->name('product.create');
@@ -53,6 +49,5 @@ Auth::routes();
 //ici je refais une route pour le logout car par défaut c'est un post. Pour que ca marche avec le lien je le fais en get
 Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 

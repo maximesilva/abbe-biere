@@ -50,7 +50,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav navbar-left">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Accueil<span
+                            <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
                                     class="sr-only ">(current)</span>
                             </a>
                         </li>

@@ -3,7 +3,7 @@
 @section('main')
     <main>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner text-center">
+            <div class="carousel-inner text-center home">
                 @foreach($products as $slider => $product)
                     <div class="carousel-item {{ $slider == 0 ? 'active' : '' }}">
 
@@ -14,7 +14,7 @@
                             <form method="get" action="/product/{{$product->id}}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$product->id}}">
-                                <button type="submit" class="btn btn-primary">Acheter</button>
+                                <button type="submit" class="btn">Acheter</button>
                             </form>
                         </div>
 
