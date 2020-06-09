@@ -82,3 +82,26 @@ body main{
     border-radius: 10px;
     background-color: #5C310E;
 }
+/*=================cart=============*/
+.cart{
+    border-radius: 10px;
+    background-color: #D9CEAD;
+}
+.cart button{
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.cart .outofstock {
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.cart img{
+    margin: 10px;
+    padding: 15px;
+    width: 80%;
+    box-shadow: 10px 5px 5px #A98364;
+    border-radius: 10px;
+    background-color: #5C310E;
+}
