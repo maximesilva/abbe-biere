@@ -102,7 +102,6 @@ footer .h5 {
 }
 /*=================cart=============*/
 .cart{
-    border-radius: 10px;
     background-color: #D9CEAD;
 }
 .cart button{
@@ -114,7 +113,9 @@ footer .h5 {
     border-radius: 10px;
     background-color: gray;
 }
-
+.cart .card{
+    border: none;
+}
 .cart img{
     margin: 10px;
     padding: 15px;

@@ -3,9 +3,9 @@
 @section('main')
     <main >
         @foreach($cart as $item)
-            <div class="container text-center align-items-center">
-                <div class="card mb-3 cart">
-                    <div class="row no-gutters align-items-center">
+            <div class="container text-center align-items-center cart">
+                <div class="card cart">
+                    <div class="row  align-items-center">
                         <div class="col-md-4">
                             <img src="/img/produit.png" class="card-img" alt="biere">
                         </div>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         @endforeach
-        <div class="container text-center align-items-center ">
+        <div class="container text-center align-items-center cart">
             <form method="post" class="cart">
                 @csrf
                 @if($item->stock > 0)
