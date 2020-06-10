@@ -22,7 +22,7 @@
             <img src="/img/logo.png" alt="AbbéBiere" width="60%">
         </div>
     </div>
-    <div class="row nav ">
+    <div class="row nav">
         <div class="container">
             <nav class="navbar navbar-expand-lg ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"

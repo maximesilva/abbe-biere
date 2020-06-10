@@ -45,12 +45,15 @@
                 @endforeach
             </div>
         </div>
+        <div class="text-center mt-4" id="reassuranceLine">
+            <p class="container paragraph-color mx-auto">
+                Bienvenu chez l’Abbé Bière, 3 jeunes développeurs, Amélie Roy, Maxime Silva et Jonathan Maran vous ont concocté cette boutique pour exercer leurs nouvelles compétences en PHP/Laravel. C’est dans l’univers de la bière que nous avons décidés d’exprimer notre imagination.
+                De la configuration serveur, l’achat du nom de domaine jusqu’à l’HTML en passant par le PHP, tout a été fait dans une collaboration minutieuse et fusionnele de l’équipe.<br>
+                C’est avec fierté, aujourd’hui, qu’on vous présente ce projet, qui est « NOTRE PROJET !!!! ».
+            </p>
+        </div>
         <div class="text-center" id="reassuranceLine">
             AVIS CLIENT
         </div>
-        <div class="text-center">
-            HISTOIRE
-        </div>
-
     </main>
 @endsection
