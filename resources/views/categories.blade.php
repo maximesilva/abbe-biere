@@ -15,21 +15,21 @@
                                 <p class="card-text align-bottom">{{ $product->volume }} ml </p>
                                 <p class="card-text align-bottom">TVA {{ $product->vat }} </p>
                                 <p class="card-text align-bottom">Stock restant : {{ $product->stock }} </p>
-                                <form method="post" action="/product/{{$product->id}}">
-                                    @csrf
-                                    @if($product->stock > 0)
-                                        <label for="quantity"> Quantité </label>
+                                @if($product->stock > 0)
+                                    <form method="post" action="{{ route('cart.add') }}">
+                                        @csrf
                                         <input type="hidden" name="id" value="{{$product->id}}">
-                                        <select type="number" id="quantity" name="{{$product->id}}">
+                                        <label for="quantity"> Quantité </label>
+                                        <select type="number" id="quantity" name="quantity">
                                             @for($i = 0; $i<$product->stock; $i++)
                                                 <option value="{{$quantity=1+$i}}">{{$quantity=1+$i}}</option>
                                             @endfor
                                         </select>
                                         <button type="submit" class="btn">Ajouter un panier</button>
-                                    @else
-                                        <p class="outofstock">Ce produit n'est plus disponible</p>
-                                    @endif
-                                </form>
+                                        @else
+                                            <p class="outofstock">Ce produit n'est plus disponible</p>
+                                        @endif
+                                    </form>
                             </div>
                         </div>
                     </div>

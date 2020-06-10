@@ -105,22 +105,76 @@
 @yield('main')
 
 <footer>
-    <div class="row bg-warning">
+    <div class="row">
         <div class="container ">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <p class="col-4 text-center"><a href="mailto:contact@le-campus-numerique.fr"
-                                                        class="text-dark"><img
-                                    src="mail.png" width="30" height="30" title="mail" alt="mail"><br>
-                                contact@le-campus-numerique.fr</a>
-                        </p>
-                        <p class="col-4 text-center"><img src="adresse.png" alt="lieu" width="30" height="30"/><br>
-                            33 Grande Rue,26000 valence</p>
-                        <p class="col-4 text-center"><img src="tel.png" alt="tel" width="30" height="30"><br>
-                            04 75 78 61 33</p>
+            <div class="col-12 text-center reassuranceLine">
+                <p>ligne de rassurance</p>
+            </div>
+            <div class="col-12 text-center">
+                <nav class="navbar navbar-expand-lg ">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav navbar-left">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
+                                        class="sr-only ">(current)</span>
+                                </a>
+                            </li>
+                            @php
+                                $categories = App\Category::all();
+                            @endphp
+                            @foreach($categories as $category)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('categories.show',$category)}}">{{$category->name}}
+                                        <span
+                                            class="sr-only ">(current)</span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <ul class=" navbar-nav navbar-right">
+                            @if (Route::has('login'))
+                                <li class="nav-item text-center">
+                                    @auth
+                                        <a class="nav-link" href="{{ route('profil.show') }}">Profil</a>
+                                <li class="nav-item text-center">
+                                    <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                                </li>
+                            @else
+                                <li class="nav-item text-center">
+                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                </li>
+                                <li class="nav-item text-center">
+                                    <a type="submit" class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @endif
+                            @endauth
+                            <li>
+                                <div class="col-2 text-center ">
+                                    <button type="button" class="btn btn-outline-warning pull-right"><a
+                                            href="{{route('cart.show')}}"
+                                            style="color: #EAA90B"> Panier </a>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+
                     </div>
-                </div>
+                </nav>
+            </div>
+            <div class="col-md-4 text-center">
+                <p class="h5">Contact</p>
+                <p><a href="mailto:amelie.roy@le-campus-numerique.fr" class="text-dark">amelie.roy@le-campus-numerique.fr</a></p>
+                <p><a href="mailto:jonathan.maran@le-campus-numerique.fr" class="text-dark">jonathan.maran@le-campus-numerique.fr</a></p>
+                <p><a href="mailto:maxime.silva@le-campus-numerique.fr" class="text-dark">maxime.silva@le-campus-numerique.fr</a></p>
+                <p class="text-center">33 Grande Rue,26000 valence</p>
+                <p class="text-center">04 75 78 61 33</p>
+            </div>
+            <div class="col-12 text-center reassuranceLine">
+                <p>Copyright</p>
             </div>
         </div>
     </div>
