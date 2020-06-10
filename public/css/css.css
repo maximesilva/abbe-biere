@@ -133,3 +133,24 @@ footer .h5 {
 .paragraph-color {
     color: #D9CEAD;
 }
+
+/*=================login=============*/
+.login .card {
+    border: none;
+}
+
+.login .card-header {
+    background-color: #5C310E;
+    color: #D9CEAD;
+}
+
+.login .card-body {
+    background-color:  #D9CEAD;
+}
+
+.login button {
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+
