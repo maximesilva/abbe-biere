@@ -41,8 +41,8 @@
                 </div>
             </div>
         @endforeach
-        <div class="container text-center align-items-center cart">
-            <form method="post" class="cart">
+        <div class="container text-center align-items-center cart p-3 ">
+            <form method="post" class="cart ">
                 @csrf
                 @if($item->stock > 0)
                     <p class="h5"> TOTAL DE VOTRE COMMANDE : {{$total}} €</p>
