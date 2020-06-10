@@ -16,39 +16,21 @@
 
 <body>
 <header>
-    <div class="row ">
-        <div class="container ">
-            <div class="align-items-center ">
-                <div class="row align-items-center">
-                    <div class="col-lg-6  h1 ">
-                        <img src="/img/logo.png" alt="AbbéBiere" width="100%">
-                        {{--                        <br>--}}
-                        {{--                        L'abbé bière--}}
-                    </div>
-                    <div class="col-3 text-center">
-                        <img src="/img/compte.png" alt="mon compte" width="35%">
-                    </div>
-                    <div class="col-3 text-center">
-                        <img src="/img/panier.png" alt="mon panier" width="35%">
-                    </div>
-                    {{--                    <div class="col-lg-12 text-center ">--}}
-                    {{--                        <p>Le culte de la bière<br></p>--}}
 
-                    {{--                    </div>--}}
-
-                </div>
-            </div>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <img src="/img/logo.png" alt="AbbéBiere" width="60%">
         </div>
     </div>
-    <div class="row nav">
-        <div class="container ">
+    <div class="row nav ">
+        <div class="container">
             <nav class="navbar navbar-expand-lg ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav navbar-left">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav  ">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
                                     class="sr-only ">(current)</span>
@@ -59,14 +41,15 @@
                         @endphp
                         @foreach($categories as $category)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('categories.show',$category)}}">{{$category->name}}
+                                <a class="nav-link"
+                                   href="{{route('categories.show',$category)}}">{{$category->name}}
                                     <span
                                         class="sr-only ">(current)</span>
                                 </a>
                             </li>
                         @endforeach
                     </ul>
-                    <ul class=" navbar-nav navbar-right">
+                    <ul class=" navbar-nav  ">
                         @if (Route::has('login'))
                             <li class="nav-item text-center">
                                 @auth
@@ -105,19 +88,21 @@
 @yield('main')
 
 <footer>
-    <div class="row">
-        <div class="container ">
+
+    <div class="container ">
+        <div class="row justify-content-center align-items-center">
             <div class="col-12 text-center reassuranceLine">
                 <p>ligne de rassurance</p>
             </div>
-            <div class="col-12 text-center">
-                <nav class="navbar navbar-expand-lg ">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg text-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown"
                             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav navbar-left">
+                        <ul class="navbar-nav mx-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
                                         class="sr-only ">(current)</span>
@@ -128,50 +113,32 @@
                             @endphp
                             @foreach($categories as $category)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('categories.show',$category)}}">{{$category->name}}
+                                    <a class="nav-link"
+                                       href="{{route('categories.show',$category)}}">{{$category->name}}
                                         <span
                                             class="sr-only ">(current)</span>
                                     </a>
                                 </li>
                             @endforeach
                         </ul>
-                        <ul class=" navbar-nav navbar-right">
-                            @if (Route::has('login'))
-                                <li class="nav-item text-center">
-                                    @auth
-                                        <a class="nav-link" href="{{ route('profil.show') }}">Profil</a>
-                                <li class="nav-item text-center">
-                                    <a class="nav-link" href="{{ route('logout') }}">Logout</a>
-                                </li>
-                            @else
-                                <li class="nav-item text-center">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                                </li>
-                                <li class="nav-item text-center">
-                                    <a type="submit" class="nav-link" href="{{ route('register') }}">Register</a>
-                                </li>
-                            @endif
-                            @endauth
-                            <li>
-                                <div class="col-2 text-center ">
-                                    <button type="button" class="btn btn-outline-warning pull-right"><a
-                                            href="{{route('cart.show')}}"
-                                            style="color: #EAA90B"> Panier </a>
-                                    </button>
-                                </div>
-                            </li>
-                        </ul>
-
                     </div>
                 </nav>
             </div>
-            <div class="col-md-4 text-center">
-                <p class="h5">Contact</p>
-                <p><a href="mailto:amelie.roy@le-campus-numerique.fr" class="text-dark">amelie.roy@le-campus-numerique.fr</a></p>
-                <p><a href="mailto:jonathan.maran@le-campus-numerique.fr" class="text-dark">jonathan.maran@le-campus-numerique.fr</a></p>
-                <p><a href="mailto:maxime.silva@le-campus-numerique.fr" class="text-dark">maxime.silva@le-campus-numerique.fr</a></p>
+            <div class="col-md-4 text-center border-right">
+                <p class="h5">CONTACT</p>
+                <p><a href="mailto:amelie.roy@le-campus-numerique.fr" class="text-dark">amelie.roy@le-campus-numerique.fr</a>
+                </p>
+                <p><a href="mailto:jonathan.maran@le-campus-numerique.fr" class="text-dark">jonathan.maran@le-campus-numerique.fr</a>
+                </p>
+                <p><a href="mailto:maxime.silva@le-campus-numerique.fr" class="text-dark">maxime.silva@le-campus-numerique.fr</a>
+                </p>
                 <p class="text-center">33 Grande Rue,26000 valence</p>
                 <p class="text-center">04 75 78 61 33</p>
+            </div>
+            <div class="col-md-4 text-center ">
+                <p class="h5">JOIN US</p>
+
+
             </div>
             <div class="col-12 text-center reassuranceLine">
                 <p>Copyright</p>
