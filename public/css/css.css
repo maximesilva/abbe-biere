@@ -18,9 +18,6 @@ body header a:hover {
 body main{
     background-color: #231709 ;
 }
-.paragraph-color {
-    color: #D9CEAD;
-}
 
 .nav{
     background-color: #5C310E;
@@ -131,4 +128,8 @@ footer .h5 {
 .home .btn{
     border-radius: 10px;
     background-color: #01D8E5;
+}
+
+.paragraph-color {
+    color: #D9CEAD;
 }
