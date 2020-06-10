@@ -31,6 +31,25 @@ body main{
     background-color: #5C310E;
 }
 
+.reassuranceLine {
+    background-color: #5C310E;
+}
+
+.footer {
+    background-color: #8C5B38;
+}
+footer a {
+    color: #D9CEAD;
+}
+
+footer a:hover {
+    color: #231709;
+}
+
+footer .h5 {
+    color: #D9CEAD;
+}
+
 /*=================category=============*/
 .category{
     background-color: #D9CEAD;

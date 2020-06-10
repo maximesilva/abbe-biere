@@ -88,63 +88,60 @@
 @yield('main')
 
 <footer>
-
-    <div class="container ">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 text-center reassuranceLine">
-                <p>ligne de rassurance</p>
-            </div>
-            <div class="col-12">
-                <nav class="navbar navbar-expand-lg text-center">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
+    <div class="row justify-content-center align-items-center footer">
+        <div class="col-12 text-center footer">
+            <p>ligne de rassurance</p>
+        </div>
+        <div class="col-12 reassuranceLine">
+            <nav class="navbar navbar-expand-lg text-center">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
+                                    class="sr-only ">(current)</span>
+                            </a>
+                        </li>
+                        @php
+                            $categories = App\Category::all();
+                        @endphp
+                        @foreach($categories as $category)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
+                                <a class="nav-link"
+                                   href="{{route('categories.show',$category)}}">{{$category->name}}
+                                    <span
                                         class="sr-only ">(current)</span>
                                 </a>
                             </li>
-                            @php
-                                $categories = App\Category::all();
-                            @endphp
-                            @foreach($categories as $category)
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                       href="{{route('categories.show',$category)}}">{{$category->name}}
-                                        <span
-                                            class="sr-only ">(current)</span>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-md-4 text-center border-right">
-                <p class="h5">CONTACT</p>
-                <p><a href="mailto:amelie.roy@le-campus-numerique.fr" class="text-dark">amelie.roy@le-campus-numerique.fr</a>
-                </p>
-                <p><a href="mailto:jonathan.maran@le-campus-numerique.fr" class="text-dark">jonathan.maran@le-campus-numerique.fr</a>
-                </p>
-                <p><a href="mailto:maxime.silva@le-campus-numerique.fr" class="text-dark">maxime.silva@le-campus-numerique.fr</a>
-                </p>
-                <p class="text-center">33 Grande Rue,26000 valence</p>
-                <p class="text-center">04 75 78 61 33</p>
-            </div>
-            <div class="col-md-4 text-center ">
-                <p class="h5">JOIN US</p>
-
-
-            </div>
-            <div class="col-12 text-center reassuranceLine">
-                <p>Copyright</p>
-            </div>
+                        @endforeach
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-4 border-right text-center border-dark">
+            <p class="h6 mt-4">CONTACT</p>
+            <p><a href="mailto:amelie.roy@le-campus-numerique.fr"
+                  class="text-dark">amelie.roy@le-campus-numerique.fr</a>
+            </p>
+            <p><a href="mailto:jonathan.maran@le-campus-numerique.fr" class="text-dark">jonathan.maran@le-campus-numerique.fr</a>
+            </p>
+            <p><a href="mailto:maxime.silva@le-campus-numerique.fr" class="text-dark">maxime.silva@le-campus-numerique.fr</a>
+            </p>
+            <p class="text-center">33 Grande Rue,26000 valence</p>
+            <p class="text-center">04 75 78 61 33</p>
+        </div>
+        <div class="col-12 col-md-4 text-center">
+            <p class="h6">JOIN US</p>
+        </div>
+        <div class="col-12 text-center reassuranceLine">
+            <p class="h5">Copyright</p>
         </div>
     </div>
+
 </footer>
 
 <!-- Optional JavaScript -->
