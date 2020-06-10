@@ -22,7 +22,7 @@
             <img src="/img/logo.png" alt="AbbéBiere" width="60%">
         </div>
     </div>
-    <div class="row nav">
+    <div class="nav">
         <div class="container">
             <nav class="navbar navbar-expand-lg ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -101,7 +101,7 @@
 @yield('main')
 
 <footer>
-    <div class="row justify-content-center align-items-center footer">
+    <div class="justify-content-center align-items-center footer">
         <div class="col-12 text-center footer">
             <p>ligne de rassurance</p>
         </div>
