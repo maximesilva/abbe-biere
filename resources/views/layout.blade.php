@@ -157,7 +157,7 @@
             </nav>
         </div>
         <div class="container">
-            <div class=" row justify-content-center align-items-center footer">
+            <div class=" row justify-content-center align-items-center footer p-3">
                 <div class="col-md-4 border-right text-center border-dark">
                     <p class="h6 mt-4">CONTACT</p>
                     <p><a href="mailto:amelie.roy@le-campus-numerique.fr"
@@ -171,7 +171,19 @@
                     <p class="text-center">04 75 78 61 33</p>
                 </div>
                 <div class="col-12 col-md-4 text-center">
-                    <p class="h6">JOIN US</p>
+                    <div class="row ">
+                        <div class="col-12">
+                            <p class="h6">JOIN US</p>
+                        </div>
+                        <div class="col-12">
+                            <a href="#"><img src="/img/insta.png" alt="insta"></a>
+                            <a href="#"><img src="/img/facebook.png" alt="facebook"></a>
+                        </div>
+                        <div class="col-12">
+                            <a href="#"><img src="/img/snapchat.png" alt="snapchat"></a>
+                            <a href="#"><img src="/img/twitter.png" alt="twitter"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
