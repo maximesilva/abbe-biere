@@ -11,15 +11,16 @@ class CartController extends Controller
 
     public function show()
     {
-
         $cart = session('cart');
         $cartview= [];
         $totalprice=0;
-        foreach ($cart as $key=>$value){
-            $product=Product::where('id', $key)->first();
-            $product->quantity=$value;
-            $totalprice+= $product->price * $value;
-            array_push($cartview,$product);
+        if (!empty($cart)){
+            foreach ($cart as $key=>$value){
+                $product=Product::where('id', $key)->first();
+                $product->quantity=$value;
+                $totalprice+= $product->price * $value;
+                array_push($cartview,$product);
+            }
         }
         return view('cart', ['cart' => $cartview, 'total'=>$totalprice]);
     }
@@ -60,6 +61,16 @@ class CartController extends Controller
         ]);
         $cart = session()->get('cart');
         $cart[$request['id']] = $request['quantity'];
+        session()->put('cart', $cart);
+        return redirect()->route('cart.show');
+    }
+
+    public function remove(Request $request){
+        $request->validate([
+            'id' => 'required',
+        ]);
+        $cart = session()->get('cart');
+        unset($cart[$request['id']]);
         session()->put('cart', $cart);
         return redirect()->route('cart.show');
     }
