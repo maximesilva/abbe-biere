@@ -52,13 +52,13 @@
                 </div>
             </div>
         </div>
-        <div class="container categories">
-            <div class="row  justify-content-center">
+        <div class="container">
+            <div class="row ">
                 @php
                     $categories = App\Category::all();
                 @endphp
                 @foreach($categories as $category)
-                    <a class="col-md-6 " href="{{route('categories.show',$category)}}">
+                    <a class="col-md-6 p-0 " href="{{route('categories.show',$category)}}">
                         <img src="/img/{{$category->name}}.png" width="100%" alt="{{$category->name}}">
                     </a>
                 @endforeach

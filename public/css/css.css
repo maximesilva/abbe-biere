@@ -11,6 +11,9 @@ body header a:hover {
     color: #231709;
 }
 
+.navbar-toggler{
+    font-size: 2rem;
+}
 .titre{
     text-decoration-color: #5C310E;
 }
@@ -58,9 +61,6 @@ footer .h5 {
     text-align: center;
 }
 
-.categories a{
-    padding: none;
-}
 /*=================category=============*/
 .category{
     background-color: #D9CEAD;

@@ -27,7 +27,7 @@
             <nav class="navbar navbar-expand-lg ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"><img src="/img/menu.png" alt="menu"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
                     <ul class="navbar-nav  ">
@@ -49,9 +49,9 @@
                             </li>
                         @endforeach
                     </ul>
-                    <ul class=" navbar-nav  ">
+                    <ul class=" navbar-nav">
                         @if (Route::has('login'))
-                            <li class="nav-item text-center">
+                            <li class="nav-item ">
                                 @auth
                                     <a class="nav-link" href="{{ route('profil.show') }}">Profil</a>
                             <li class="nav-item text-center">
@@ -66,7 +66,7 @@
                                     Logout</a>
                             </li>
                         @else
-                            <li class="nav-item text-center">
+                            <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('login') }}">
                                     <svg class="bi bi-person" width="1em" height="1em" viewBox="0 0 16 16"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@
                                     </svg>
                                     Login</a>
                             </li>
-                            <li class="nav-item text-center">
+                            <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('register') }}">
                                     <svg class="bi bi-person-plus" width="1em" height="1em" viewBox="0 0 16 16"
                                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
 
 <footer>
     <div class="footer">
-        <div class="text-center" >
+        <div class="text-center">
             <div class="container pt-2">
                 <div class="row align-items-end">
                     <div class="col-6 col-md-3 center">
