@@ -31,7 +31,11 @@
             </a>
         </div>
         <div class="text-center" id="reassuranceLine">
-            LIGNE DE RASSURANCE
+            <div class="row">
+            <img src="/img/livraison.png" alt="livraison rapide">
+            <img src="/img/SAV.png" alt="SAV">
+            <img src="/img/communaute.png" alt="grande communaute">
+            <img src="/img/paiement.png" alt="paiement securise">
         </div>
         <div class="container">
             <div class="row m-0 justify-content-center">
