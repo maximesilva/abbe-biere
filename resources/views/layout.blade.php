@@ -19,7 +19,7 @@
 
     <div class="container ">
         <div class="row justify-content-center">
-            <img src="/img/logo.png" alt="AbbéBiere" width="60%">
+            <img src="/img/logo2.png" alt="AbbéBiere" width="60%">
         </div>
     </div>
     <div class="nav">
@@ -123,8 +123,27 @@
 
 <footer>
     <div class="footer">
-        <div class="col-12 text-center footer">
-            <p>ligne de rassurance</p>
+        <div class="text-center" >
+            <div class="container pt-2">
+                <div class="row align-items-end">
+                    <div class="col-6 col-md-3 center">
+                        <img src="/img/livraison.png" alt="livraison rapide">
+                        <p>Livraison Rapide</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/SAV.png" alt="SAV">
+                        <p>Service client 7J/7</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/communaute.png" alt="grande communaute">
+                        <p>Une communauté en or</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/paiement.png" alt="paiement securise">
+                        <p>Paiement sécurisé</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-12 reassuranceLine">
             <nav class="navbar navbar-expand-lg text-center">
@@ -158,7 +177,7 @@
         </div>
         <div class="container">
             <div class=" row justify-content-center align-items-center footer p-3">
-                <div class="col-md-4 border-right text-center border-dark">
+                <div class="col-12 border-bottom border-dark col-md-4 text-center ">
                     <p class="h6 mt-4">CONTACT</p>
                     <p><a href="mailto:amelie.roy@le-campus-numerique.fr"
                           class="text-dark">amelie.roy@le-campus-numerique.fr</a>
@@ -170,7 +189,7 @@
                     <p class="text-center">33 Grande Rue,26000 valence</p>
                     <p class="text-center">04 75 78 61 33</p>
                 </div>
-                <div class="col-12 col-md-4 text-center">
+                <div class="col-12 col-md-4 text-center p-3">
                     <div class="row ">
                         <div class="col-12">
                             <p class="h6">JOIN US</p>

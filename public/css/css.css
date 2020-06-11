@@ -50,6 +50,17 @@ footer .h5 {
     color: #D9CEAD;
 }
 
+#reassuranceLine p {
+    color:#D9CEAD ;
+}
+
+#reassuranceLine .center {
+    text-align: center;
+}
+
+.categories a{
+    padding: none;
+}
 /*=================category=============*/
 .category{
     background-color: #D9CEAD;

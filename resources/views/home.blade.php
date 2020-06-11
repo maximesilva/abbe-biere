@@ -31,28 +31,46 @@
             </a>
         </div>
         <div class="text-center" id="reassuranceLine">
-            <div class="row">
-            <img src="/img/livraison.png" alt="livraison rapide">
-            <img src="/img/SAV.png" alt="SAV">
-            <img src="/img/communaute.png" alt="grande communaute">
-            <img src="/img/paiement.png" alt="paiement securise">
+            <div class="container pt-2">
+                <div class="row align-items-end">
+                    <div class="col-6 col-md-3 center">
+                        <img src="/img/livraison.png" alt="livraison rapide">
+                        <p>Livraison Rapide</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/SAV.png" alt="SAV">
+                        <p>Service client 7J/7</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/communaute.png" alt="grande communaute">
+                        <p>Une communauté en or</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/paiement.png" alt="paiement securise">
+                        <p>Paiement sécurisé</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <div class="row m-0 justify-content-center">
+        <div class="container categories">
+            <div class="row  justify-content-center">
                 @php
                     $categories = App\Category::all();
                 @endphp
                 @foreach($categories as $category)
-                    <a class="col-md-6 text-center" href="{{route('categories.show',$category)}}">
-                        <img src="/img/{{$category->name}}.jpg" width="100%" alt="{{$category->name}}">
+                    <a class="col-md-6 " href="{{route('categories.show',$category)}}">
+                        <img src="/img/{{$category->name}}.png" width="100%" alt="{{$category->name}}">
                     </a>
                 @endforeach
             </div>
         </div>
         <div class="text-center p-3" id="reassuranceLine">
             <p class="container paragraph-color mx-auto">
-                Bienvenu chez l’Abbé Bière, 3 jeunes développeurs, Amélie Roy, Maxime Silva et Jonathan Maran vous ont concocté cette boutique pour exercer leurs nouvelles compétences en PHP/Laravel. C’est dans l’univers de la bière que nous avons décidés d’exprimer notre imagination.
-                De la configuration serveur, l’achat du nom de domaine jusqu’à l’HTML en passant par le PHP, tout a été fait dans une collaboration minutieuse et fusionnele de l’équipe.<br>
+                Bienvenu chez l’Abbé Bière, 3 jeunes développeurs, Amélie Roy, Maxime Silva et Jonathan Maran vous ont
+                concocté cette boutique pour exercer leurs nouvelles compétences en PHP/Laravel. C’est dans l’univers de
+                la bière que nous avons décidés d’exprimer notre imagination.
+                De la configuration serveur, l’achat du nom de domaine jusqu’à l’HTML en passant par le PHP, tout a été
+                fait dans une collaboration minutieuse et fusionnele de l’équipe.<br>
                 C’est avec fierté, aujourd’hui, qu’on vous présente ce projet, qui est « NOTRE PROJET !!!! ».
             </p>
         </div>
