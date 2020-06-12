@@ -52,6 +52,11 @@ footer a:hover {
 footer .h5 {
     color: #D9CEAD;
 }
+footer nav li{
+    display: inline;
+    list-style: none; /* pour enlever les puces sur IE7 */
+    margin: 10px;
+}
 
 #reassuranceLine p {
     color:#D9CEAD ;
