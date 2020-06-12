@@ -63,7 +63,7 @@
                                         <path fill-rule="evenodd"
                                               d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
                                     </svg>
-                                    Logout</a>
+                                    Se déconnecter</a>
                             </li>
                         @else
                             <li class="nav-item ">
