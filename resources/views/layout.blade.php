@@ -145,35 +145,27 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 reassuranceLine">
-            <nav class="navbar navbar-expand-lg text-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
-                                    class="sr-only ">(current)</span>
-                            </a>
-                        </li>
-                        @php
-                            $categories = App\Category::all();
-                        @endphp
-                        @foreach($categories as $category)
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                   href="{{route('categories.show',$category)}}">{{$category->name}}
-                                    <span
-                                        class="sr-only ">(current)</span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+        <div class="col-12 reassuranceLine pt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <nav class="col-12 text-center">
+                        <ul>
+                            @php
+                                $categories = App\Category::all();
+                            @endphp
+                            @foreach($categories as $category)
+                                <li>
+                                    <a
+                                        href="{{route('categories.show',$category)}}">{{$category->name}}
+                                        <span
+                                            class="sr-only ">(current)</span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </nav>
                 </div>
-            </nav>
+            </div>
         </div>
         <div class="container">
             <div class=" row justify-content-center align-items-center footer p-3">

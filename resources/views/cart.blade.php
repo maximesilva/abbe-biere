@@ -50,11 +50,13 @@
                 </div>
             @endforeach
             <div class="container text-center align-items-center cart p-3 ">
-                <form method="post" class="cart ">
+                <form method="post" class="cart" action="{{route('cart.validate')}}">
                     @csrf
                     @if($item->stock > 0)
                         <p class="h5"> TOTAL DE VOTRE COMMANDE : {{$total}} €</p>
-                        <button type="submit" class="btn ">COMMANDER</button>
+                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                            COMMANDER
+                        </button>
                     @else
                         <p>Ce produit n'est plus disponible</p>
                     @endif
@@ -65,6 +67,23 @@
                 votre panier est vide
             </div>
         @endif
+            <div class="modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">EH NON !!!!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Nous vous remercions de l'intérêt que vous apportez à notre site.
+                                Ils vous est impossible de commander cependant, vous pouvez nous joindre pour vos futurs projets web !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </main>
 @endsection
 

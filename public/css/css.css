@@ -52,6 +52,11 @@ footer a:hover {
 footer .h5 {
     color: #D9CEAD;
 }
+footer nav li{
+    display: inline;
+    list-style: none; /* pour enlever les puces sur IE7 */
+    margin: 10px;
+}
 
 #reassuranceLine p {
     color:#D9CEAD ;
@@ -134,6 +139,19 @@ footer .h5 {
     box-shadow: 10px 5px 5px #A98364;
     border-radius: 10px;
     background-color: #5C310E;
+}
+
+.modal-header{
+    color:#D9CEAD ;
+    background-color: #5C310E;
+    border-bottom: solid 1px #5C310E;
+}
+
+.modal .close {
+    color:#D9CEAD ;
+}
+.modal-body{
+    background-color: #D9CEAD;
 }
 /*=================home=============*/
 .home .btn{
