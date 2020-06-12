@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 login">
                     <div class="card">
-                        <div class="card-header text-center">{{ __('Login') }}</div>
+                        <div class="card-header text-center">{{ __('Connexion') }}</div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('login') }}">
@@ -14,7 +14,7 @@
 
                                 <div class="form-group row">
                                     <label for="email"
-                                           class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                           class="col-md-4 col-form-label text-md-right">{{ __('Adresse Mail') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="email" type="email"
@@ -31,7 +31,7 @@
 
                                 <div class="form-group row">
                                     <label for="password"
-                                           class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                           class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="password" type="password"
