@@ -35,16 +35,16 @@ class CartController extends Controller
         //si cart n'existe pas en session
         if (!session()->exists('cart')) {
             //on crée le panier
-            $cart[$request['id']] = $request['quantity'];
+            $cart[$request->input('id')] = $request->input('quantity');
         } else {
             //si le penier existe on le récupre
             $cart = session()->get('cart');
 
             //on maj la quantitée
-            if (isset($cart[$request['id']])) {
-                $cart[$request['id']] += $request['quantity'];
+            if (isset($cart[$request->input('id')])) {
+                $cart[$request->input('id')] += $request->input('quantity');
             } else {
-                $cart[$request['id']] = $request['quantity'];
+                $cart[$request->input('id')] = $request->input('quantity');
             }
         }
         //on sauve dans la session le panier
@@ -60,7 +60,7 @@ class CartController extends Controller
             'quantity' => 'required',
         ]);
         $cart = session()->get('cart');
-        $cart[$request['id']] = $request['quantity'];
+        $cart[$request->input('id')] = $request->input('quantity');
         session()->put('cart', $cart);
         return redirect()->route('cart.show');
     }
@@ -70,7 +70,7 @@ class CartController extends Controller
             'id' => 'required',
         ]);
         $cart = session()->get('cart');
-        unset($cart[$request['id']]);
+        unset($cart[$request->input('id')]);
         session()->put('cart', $cart);
         return redirect()->route('cart.show');
     }
