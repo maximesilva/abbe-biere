@@ -145,7 +145,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 reassuranceLine p-2 pt-5">
+        <div class="col-12 reassuranceLine pt-3">
             <div class="container">
                 <div class="row justify-content-center">
                     <nav class="col-12 text-center">
