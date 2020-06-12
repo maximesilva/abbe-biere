@@ -135,6 +135,19 @@ footer .h5 {
     border-radius: 10px;
     background-color: #5C310E;
 }
+
+.modal-header{
+    color:#D9CEAD ;
+    background-color: #5C310E;
+    border-bottom: solid 1px #5C310E;
+}
+
+.modal .close {
+    color:#D9CEAD ;
+}
+.modal-body{
+    background-color: #D9CEAD;
+}
 /*=================home=============*/
 .home .btn{
     border-radius: 10px;

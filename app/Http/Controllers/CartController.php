@@ -75,6 +75,22 @@ class CartController extends Controller
         return redirect()->route('cart.show');
     }
 
+    public function validate(Request $request, array $rules,
+                             array $messages = [], array $customAttributes = []){
+        $cart = session()->get('cart');
+        $cartview= [];
+        $totalprice=0;
+        if (!empty($cart)){
+            foreach ($cart as $key=>$value){
+                $product=Product::where('id', $key)->first();
+                $product->quantity=$value;
+                $totalprice+= $product->price * $value;
+                array_push($cartview,$product);
+            }
+        }
+    }
+
+
     private function cartCreate()
     {
 

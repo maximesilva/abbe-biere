@@ -36,6 +36,7 @@ Route::name('cart.')->prefix('/cart/')->group(function () {
     Route::post('/update', 'CartController@update')->name('update');
     Route::post('/remove', 'CartController@remove')->name('remove');
     Route::post('/clear', 'CartController@clear')->name('clear');
+    Route::post('/validate','CartController@validate')->name('validate');
 });
 
 Route::name('profil.')->prefix('/profil')->middleware('auth')->group(
