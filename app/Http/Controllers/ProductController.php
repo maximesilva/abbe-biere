@@ -8,15 +8,27 @@ use DB;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        if (session()->exists('admin')) {
+            return view('admin_product');
+        } else {
+            return redirect(route('home.show'));
+        }
+    }
+
     public function create()
     {
-        //$this->authorize('view');
-        return view('admin_product');
+        if (session()->exists('admin')) {
+            return view('admin_product');
+        } else {
+            return redirect(route('home.show'));
+        }
     }
 
     public function store(Request $request)
     {
-       $request->validate([
+        $request->validate([
             'category' => 'required',
             'name' => 'required',
             'description' => 'required',
@@ -48,30 +60,9 @@ class ProductController extends Controller
      * @param Product $product
      * @return void
      */
-    public function show(Product $product) {
-        return view ('product', ['product'=> $product]);
-    }
-
-    public function cart($id)
+    public function show(Product $product)
     {
-
-        $product = Product::find($id);
-        $cart = session()->get('cart');
-
-        // if cart is empty then this the first product
-        if (!$cart) {
-
-            $cart = [
-                $id => [
-                    "name" => $product->name,
-                    "quantity" => 1,
-                    "price" => $product->price,
-                    "photo" => $product->photo
-                ]
-            ];
-
-            session()->put('cart', $cart);
-        }
-
+        return view('product', ['product' => $product]);
     }
+
 }

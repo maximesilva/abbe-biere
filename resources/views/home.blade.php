@@ -32,7 +32,7 @@
         </div>
         <div class="text-center" id="reassuranceLine">
             <div class="container pt-2">
-                <div class="row align-items-end">
+                <div class="row align-items-start pt-2">
                     <div class="col-6 col-md-3 center">
                         <img src="/img/livraison.png" alt="livraison rapide">
                         <p>Livraison Rapide</p>

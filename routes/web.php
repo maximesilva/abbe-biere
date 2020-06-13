@@ -24,9 +24,11 @@ Route::name('categories.')->group(function () {
     Route::post('/categories/{category}', 'CartController@add')->name('add');
 });
 
-Route::name('admin.')->prefix('/admin/')->group(function () {
+Route::name('admin.')->prefix('/admin/')->middleware('auth')->group(function () {
+    Route::get('','ProductController@index')->name('home');
     Route::get('product', 'ProductController@create')->name('product.create');
     Route::post('product', 'ProductController@store')->name('product.store');
+    Route::post('product/delete', 'ProductController@delete')->name('product.delete');
 });
 
 Route::name('cart.')->prefix('/cart/')->group(function () {
