@@ -3,7 +3,7 @@
 @section('main')
     <main>
         <div class="container">
-            <form method="post" class="product">
+            <form method="post" class="product" action="{{route('admin.product.store')}}">
                 @csrf
                 <div class="form-group">
                     <label for="category">Categorie</label>
