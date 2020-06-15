@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::name('home.')->prefix('/')->group(function (){
+Route::name('home.')->prefix('/')->group(function () {
     Route::get('', 'HomeController@index')->name('show');
 });
 
@@ -25,9 +25,10 @@ Route::name('categories.')->group(function () {
 });
 
 Route::name('admin.')->prefix('/admin/')->middleware('auth')->group(function () {
-    Route::get('','ProductController@index')->name('home');
+    Route::get('', 'ProductController@index')->name('home');
     Route::get('product', 'ProductController@create')->name('product.create');
     Route::post('product', 'ProductController@store')->name('product.store');
+    Route::post('product/update','ProductController@update')->name('product.update');
     Route::post('product/delete', 'ProductController@delete')->name('product.delete');
 });
 
@@ -38,11 +39,11 @@ Route::name('cart.')->prefix('/cart/')->group(function () {
     Route::post('/update', 'CartController@update')->name('update');
     Route::post('/remove', 'CartController@remove')->name('remove');
     Route::post('/clear', 'CartController@clear')->name('clear');
-    Route::post('/validate','CartController@validate')->name('validate');
+    Route::post('/validate', 'CartController@validate')->name('validate');
 });
 
 Route::name('profil.')->prefix('/profil')->middleware('auth')->group(
-    function(){
+    function () {
         Route::get('', 'UserController@show')->name('show');
     }
 );

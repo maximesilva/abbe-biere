@@ -62,7 +62,14 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('product', ['product' => $product]);
+        if (session()->exists('admin')){
+            return view('admin_product_view',['product'=>$product]);
+        } else {
+            return view('product', ['product' => $product]);
+        }
     }
 
+    public function update(Request $request){
+        echo 'bonjouor';
+    }
 }

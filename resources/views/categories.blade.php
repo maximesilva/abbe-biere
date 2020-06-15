@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 @foreach($products as $product)
                     <div class="card col-sm-6 col-md-4 col-lg-3 category text-center">
-                        <img src="/img/produit.png" class="card-img-top" alt="...">
+                        <a href="{{route('product.show',$product->id)}}"> <img src="/img/produit.png" class="card-img-top" alt="..."></a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->name }}</h5>
                             <p class="card-text">{{ $product->description }} </p>
