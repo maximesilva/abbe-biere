@@ -29,7 +29,7 @@ Route::name('admin.')->prefix('/admin/')->middleware('auth')->group(function () 
     Route::get('product', 'ProductController@create')->name('product.create');
     Route::post('product', 'ProductController@store')->name('product.store');
     Route::post('product/update','ProductController@update')->name('product.update');
-    Route::post('product/delete', 'ProductController@delete')->name('product.delete');
+    Route::post('product/remove', 'ProductController@remove')->name('product.remove');
 });
 
 Route::name('cart.')->prefix('/cart/')->group(function () {

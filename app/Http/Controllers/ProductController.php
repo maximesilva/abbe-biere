@@ -86,4 +86,12 @@ class ProductController extends Controller
 
         return redirect('admin/product');
     }
+    public function remove(Request $request){
+        $request->validate([
+            'id' => 'required',
+        ]);
+        $product=Product::where('id', $request->id);
+        $product->delete();
+        return redirect(route('home.show'));
+    }
 }
