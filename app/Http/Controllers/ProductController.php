@@ -70,6 +70,20 @@ class ProductController extends Controller
     }
 
     public function update(Request $request){
-        echo 'bonjouor';
+
+        $request->validate([
+            'category' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'volume' => 'required',
+            'vat' => 'required',
+            'stock' => 'required',
+            'weight' => 'required'
+        ]);
+        $product=Product::where('id',$request->id);
+        $product->update(['category_id'=>$request->category,'name'=>$request->name,'description'=>$request->description,'price'=>$request->price,'volume'=>$request->volume,'vat'=>$request->vat,'stock'=>$request->stock,'weight'=>$request->weight]);
+
+        return redirect('admin/product');
     }
 }

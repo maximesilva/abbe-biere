@@ -17,6 +17,10 @@
                                         <input type="text" value="{{$product->name}}" name="name">
                                     </div>
                                     <div>
+                                        <label for="category">category</label>
+                                        <input type="number" name="category" value="{{$product->category_id}}">
+                                    </div>
+                                    <div>
                                         <label for="description">description</label>
                                         <textarea name="description">{{$product->description}}</textarea>
                                     </div>
@@ -29,8 +33,12 @@
                                         <input type="number" name="vat" value="{{$product->vat}}">
                                     </div>
                                     <div>
-                                        <label for="price">volume</label>
+                                        <label for="price">price</label>
                                         <input type="number" name="price" value="{{$product->price}}">
+                                    </div>
+                                    <div>
+                                        <label for="weight">weight</label>
+                                        <input type="number" name="weight" value="{{$product->weight}}">
                                     </div>
                                     <div>
                                         <label for="stock">stock</label>
