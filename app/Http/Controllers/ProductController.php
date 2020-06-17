@@ -13,7 +13,7 @@ class ProductController extends Controller
         if (session()->exists('admin')) {
             return view('admin_product');
         } else {
-            return redirect(route('home.show'));
+            return abort(404);
         }
     }
 
@@ -22,7 +22,7 @@ class ProductController extends Controller
         if (session()->exists('admin')) {
             return view('admin_product');
         } else {
-            return redirect(route('home.show'));
+            return abort(404);
         }
     }
 
