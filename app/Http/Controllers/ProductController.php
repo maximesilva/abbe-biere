@@ -8,14 +8,27 @@ use DB;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        if (session()->exists('admin')) {
+            return view('admin_product');
+        } else {
+            return abort(404);
+        }
+    }
+
     public function create()
     {
-        return view('admin_product');
+        if (session()->exists('admin')) {
+            return view('admin_product');
+        } else {
+            return abort(404);
+        }
     }
 
     public function store(Request $request)
     {
-       $request->validate([
+        $request->validate([
             'category' => 'required',
             'name' => 'required',
             'description' => 'required',
@@ -47,30 +60,38 @@ class ProductController extends Controller
      * @param Product $product
      * @return void
      */
-    public function show(Product $product) {
-        return view ('product', ['product'=> $product]);
+    public function show(Product $product)
+    {
+        if (session()->exists('admin')){
+            return view('admin_product_view',['product'=>$product]);
+        } else {
+            return view('product', ['product' => $product]);
+        }
     }
 
-    public function cart($id)
-    {
+    public function update(Request $request){
 
-        $product = Product::find($id);
-        $cart = session()->get('cart');
+        $request->validate([
+            'category' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'volume' => 'required',
+            'vat' => 'required',
+            'stock' => 'required',
+            'weight' => 'required'
+        ]);
+        $product=Product::where('id',$request->id);
+        $product->update(['category_id'=>$request->category,'name'=>$request->name,'description'=>$request->description,'price'=>$request->price,'volume'=>$request->volume,'vat'=>$request->vat,'stock'=>$request->stock,'weight'=>$request->weight]);
 
-        // if cart is empty then this the first product
-        if (!$cart) {
-
-            $cart = [
-                $id => [
-                    "name" => $product->name,
-                    "quantity" => 1,
-                    "price" => $product->price,
-                    "photo" => $product->photo
-                ]
-            ];
-
-            session()->put('cart', $cart);
-        }
-
+        return redirect('admin/product');
+    }
+    public function remove(Request $request){
+        $request->validate([
+            'id' => 'required',
+        ]);
+        $product=Product::where('id', $request->id);
+        $product->delete();
+        return redirect(route('home.show'));
     }
 }
