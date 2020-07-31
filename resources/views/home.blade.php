@@ -3,16 +3,20 @@
 @section('main')
     <main>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner text-center">
+            <div class="carousel-inner text-center home">
                 @foreach($products as $slider => $product)
                     <div class="carousel-item {{ $slider == 0 ? 'active' : '' }}">
 
-                            <img src="{{$product->src}}" class="" alt="{{ $product->name }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">{{ $product->price }} €</p>
-                                <a href="#" class="btn btn-primary">ACHETER</a>
-                            </div>
+                        <img src="/img/produit.png" class="" alt="{{ $product->name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text">{{ $product->price }} €</p>
+                            <form method="get" action="/product/{{$product->id}}">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <button type="submit" class="btn">Acheter</button>
+                            </form>
+                        </div>
 
                     </div>
                 @endforeach
@@ -27,26 +31,48 @@
             </a>
         </div>
         <div class="text-center" id="reassuranceLine">
-            LIGNE DE RASSURANCE
+            <div class="container pt-2">
+                <div class="row align-items-start pt-2">
+                    <div class="col-6 col-md-3 center">
+                        <img src="/img/livraison.png" alt="livraison rapide">
+                        <p>Livraison Rapide</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/SAV.png" alt="SAV">
+                        <p>Service client 7J/7</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/communaute.png" alt="grande communaute">
+                        <p>Une communauté en or</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/paiement.png" alt="paiement securise">
+                        <p>Paiement sécurisé</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container">
-            <div class="row m-0 justify-content-center">
+            <div class="row ">
                 @php
                     $categories = App\Category::all();
                 @endphp
                 @foreach($categories as $category)
-                    <a class="col-md-6 text-center" href="{{route('categories.show',$category)}}">
-                        <img src="/img/{{$category->name}}.jpg" width="100%" alt="{{$category->name}}">
+                    <a class="col-md-6 p-0 " href="{{route('categories.show',$category)}}">
+                        <img src="/img/{{$category->name}}.png" width="100%" alt="{{$category->name}}">
                     </a>
                 @endforeach
             </div>
         </div>
-        <div class="text-center" id="reassuranceLine">
-            AVIS CLIENT
+        <div class="text-center p-3" id="reassuranceLine">
+            <p class="container paragraph-color mx-auto">
+                Bienvenue chez l’Abbé Bière, 3 jeunes développeurs, Amélie Roy, Maxime Silva et Jonathan Maran vous ont
+                concoctés cette boutique pour exercer leurs nouvelles compétences en PHP/Laravel. C’est dans l’univers de
+                la bière que nous avons décidé d’exprimer notre imagination.
+                De la configuration serveur, l’achat du nom de domaine jusqu’à l’HTML en passant par le PHP, tout a été
+                fait dans une collaboration minutieuse et fusionnelle de l’équipe.<br>
+                C’est avec fierté, aujourd’hui, qu’on vous présente ce projet, qui est « NOTRE PROJET !!!! ».
+            </p>
         </div>
-        <div class="text-center">
-            HISTOIRE
-        </div>
-
     </main>
 @endsection

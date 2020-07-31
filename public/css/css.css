@@ -11,6 +11,9 @@ body header a:hover {
     color: #231709;
 }
 
+.navbar-toggler{
+    font-size: 2rem;
+}
 .titre{
     text-decoration-color: #5C310E;
 }
@@ -21,7 +24,6 @@ body main{
 
 .nav{
     background-color: #5C310E;
-    ;
 }
 
 .carousel-item{
@@ -30,4 +32,158 @@ body main{
 
 #reassuranceLine{
     background-color: #5C310E;
+}
+
+.reassuranceLine {
+    background-color: #5C310E;
+}
+
+.footer {
+    background-color: #8C5B38;
+}
+footer a {
+    color: #D9CEAD;
+}
+
+footer a:hover {
+    color: #231709;
+}
+
+footer .h5 {
+    color: #D9CEAD;
+}
+footer nav li{
+    display: inline;
+    list-style: none; /* pour enlever les puces sur IE7 */
+    margin: 10px;
+}
+
+#reassuranceLine p {
+    color:#D9CEAD ;
+}
+
+#reassuranceLine .center {
+    text-align: center;
+}
+
+/*=================category=============*/
+.category{
+    background-color: #D9CEAD;
+}
+
+.category img{
+    box-shadow: 10px 5px 5px #A98364;
+    border-radius: 10px;
+    background-color: #5C310E;
+}
+
+.category .card-body .align-bottom{
+    position: relative;
+    bottom: 0;
+}
+
+.category .btn {
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.category .outofstock {
+    border-radius: 10px;
+    background-color: gray;
+}
+
+/*=================product=============*/
+
+.product{
+    border-radius: 10px;
+    background-color: #D9CEAD;
+}
+.product button{
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.product .outofstock {
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.product img{
+    margin: 10px;
+    padding: 15px;
+    width: 80%;
+    box-shadow: 10px 5px 5px #A98364;
+    border-radius: 10px;
+    background-color: #5C310E;
+}
+/*=================cart=============*/
+.cart{
+    background-color: #D9CEAD;
+}
+.cart button{
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.cart .outofstock {
+    border-radius: 10px;
+    background-color: gray;
+}
+.cart .card{
+    border: none;
+}
+.cart img{
+    margin: 10px;
+    padding: 15px;
+    width: 80%;
+    box-shadow: 10px 5px 5px #A98364;
+    border-radius: 10px;
+    background-color: #5C310E;
+}
+
+.modal-header{
+    color:#D9CEAD ;
+    background-color: #5C310E;
+    border-bottom: solid 1px #5C310E;
+}
+
+.modal .close {
+    color:#D9CEAD ;
+}
+.modal-body{
+    background-color: #D9CEAD;
+}
+/*=================home=============*/
+.home .btn{
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+.paragraph-color {
+    color: #D9CEAD;
+}
+
+/*=================login=============*/
+.login .card {
+    border: none;
+}
+
+.login .card-header {
+    background-color: #5C310E;
+    color: #D9CEAD;
+}
+
+.login .card-body {
+    background-color:  #D9CEAD;
+}
+
+.login button {
+    border-radius: 10px;
+    background-color: #01D8E5;
+}
+
+/*=================profil=============*/
+.profil {
+    background-color: #D9CEAD ;
+    border-radius: 10px;
 }

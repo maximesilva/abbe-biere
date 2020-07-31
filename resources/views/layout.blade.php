@@ -16,41 +16,23 @@
 
 <body>
 <header>
-    <div class="row ">
-        <div class="container ">
-            <div class="align-items-center ">
-                <div class="row align-items-center">
-                    <div class="col-lg-6  h1 ">
-                        <img src="/img/logo.png" alt="AbbéBiere" width="100%">
-{{--                        <br>--}}
-{{--                        L'abbé bière--}}
-                    </div>
-                    <div class="col-3 text-center">
-                        <img src="/img/compte.png" alt="mon compte" width="35%">
-                    </div>
-                    <div class="col-3 text-center">
-                        <img src="/img/panier.png" alt="mon panier" width="35%">
-                    </div>
-{{--                    <div class="col-lg-12 text-center ">--}}
-{{--                        <p>Le culte de la bière<br></p>--}}
 
-{{--                    </div>--}}
-
-                </div>
-            </div>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <img src="/img/logo2.png" alt="AbbéBiere" width="60%">
         </div>
     </div>
-    <div class="row nav">
-        <div class="container ">
+    <div class="nav">
+        <div class="container">
             <nav class="navbar navbar-expand-lg ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"><img src="/img/menu.png" alt="menu"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav navbar-left">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav  ">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Accueil<span
+                            <a class="nav-link" href="{{ route('home.show') }}">Accueil<span
                                     class="sr-only ">(current)</span>
                             </a>
                         </li>
@@ -59,22 +41,70 @@
                         @endphp
                         @foreach($categories as $category)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('categories.show',$category)}}">{{$category->name}}
+                                <a class="nav-link"
+                                   href="{{route('categories.show',$category)}}">{{$category->name}}
                                     <span
                                         class="sr-only ">(current)</span>
                                 </a>
                             </li>
                         @endforeach
                     </ul>
-                    <ul class=" navbar-nav navbar-right">
-                        <li class="nav-item text-center">
-                            <a class="nav-link" href="index.php?page=login">Connection</a>
-                        </li>
+                    <ul class=" navbar-nav">
+                        @if (Route::has('login'))
+                            <li class="nav-item ">
+                                @auth
+                                    <a class="nav-link" href="{{ route('profil.show') }}">Profil</a>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="{{ route('logout') }}">
+                                    <svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                                        <path fill-rule="evenodd"
+                                              d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                                    </svg>
+                                    Se déconnecter</a>
+                            </li>
+                        @else
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    <svg class="bi bi-person" width="1em" height="1em" viewBox="0 0 16 16"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    </svg>
+                                    Identifiez-vous</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    <svg class="bi bi-person-plus" width="1em" height="1em" viewBox="0 0 16 16"
+                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M11 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM1.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM6 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm4.5 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                                        <path fill-rule="evenodd"
+                                              d="M13 7.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/>
+                                    </svg>
+                                    Nouveau client ?</a>
+                            </li>
+                        @endif
+                        @endauth
                         <li>
                             <div class="col-2 text-center ">
                                 <button type="button" class="btn btn-outline-warning pull-right"><a
-                                        href="index.php?page=panier"
-                                        style="color: #EAA90B"> Panier </a>
+                                        href="{{route('cart.show')}}"
+                                        style="color: #EAA90B">
+                                        <svg class="bi bi-basket" width="1em" height="1em" viewBox="0 0 16 16"
+                                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                  d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M1 7v1h14V7H1zM.5 6a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5H.5z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M14 9H2v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9zM2 8a1 1 0 0 0-1 1v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1H2z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M4 10a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 1 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                                        </svg>
+                                    </a>
                                 </button>
                             </div>
                         </li>
@@ -92,25 +122,87 @@
 @yield('main')
 
 <footer>
-    <div class="row bg-warning">
-        <div class="container ">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <p class="col-4 text-center"><a href="mailto:contact@le-campus-numerique.fr"
-                                                        class="text-dark"><img
-                                    src="mail.png" width="30" height="30" title="mail" alt="mail"><br>
-                                contact@le-campus-numerique.fr</a>
-                        </p>
-                        <p class="col-4 text-center"><img src="adresse.png" alt="lieu" width="30" height="30"/><br>
-                            33 Grande Rue,26000 valence</p>
-                        <p class="col-4 text-center"><img src="tel.png" alt="tel" width="30" height="30"><br>
-                            04 75 78 61 33</p>
+    <div class="footer">
+        <div class="text-center">
+            <div class="container pt-2">
+                <div class="row align-items-start pt-2">
+                    <div class="col-6 col-md-3 center">
+                        <img src="/img/livraison.png" alt="livraison rapide">
+                        <p>Livraison Rapide</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/SAV.png" alt="SAV">
+                        <p>Service client 7J/7</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/communaute.png" alt="grande communaute">
+                        <p>Une communauté en or</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <img src="/img/paiement.png" alt="paiement securise">
+                        <p>Paiement sécurisé</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-12 reassuranceLine pt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <nav class="col-12 text-center">
+                        <ul>
+                            @php
+                                $categories = App\Category::all();
+                            @endphp
+                            @foreach($categories as $category)
+                                <li>
+                                    <a
+                                        href="{{route('categories.show',$category)}}">{{$category->name}}
+                                        <span
+                                            class="sr-only ">(current)</span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class=" row justify-content-center align-items-center footer p-3">
+                <div class="col-12 border-bottom border-dark col-md-4 text-center ">
+                    <p class="h6 mt-4">CONTACT</p>
+                    <p><a href="mailto:amelie.roy@le-campus-numerique.fr"
+                          class="text-dark">amelie.roy@le-campus-numerique.fr</a>
+                    </p>
+                    <p><a href="mailto:jonathan.maran@le-campus-numerique.fr" class="text-dark">jonathan.maran@le-campus-numerique.fr</a>
+                    </p>
+                    <p><a href="mailto:maxime.silva@le-campus-numerique.fr" class="text-dark">maxime.silva@le-campus-numerique.fr</a>
+                    </p>
+                    <p class="text-center">33 Grande Rue,26000 valence</p>
+                    <p class="text-center">04 75 78 61 33</p>
+                </div>
+                <div class="col-12 col-md-4 text-center p-3">
+                    <div class="row ">
+                        <div class="col-12">
+                            <p class="h6">JOIN US</p>
+                        </div>
+                        <div class="col-12">
+                            <a href="#"><img src="/img/insta.png" alt="insta"></a>
+                            <a href="#"><img src="/img/facebook.png" alt="facebook"></a>
+                        </div>
+                        <div class="col-12">
+                            <a href="#"><img src="/img/snapchat.png" alt="snapchat"></a>
+                            <a href="#"><img src="/img/twitter.png" alt="twitter"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-center reassuranceLine p-1">
+            <p class="h5">Copyright</p>
+        </div>
     </div>
+
 </footer>
 
 <!-- Optional JavaScript -->

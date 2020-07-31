@@ -18,9 +18,13 @@ class HomeController extends Controller
     }
 
     public function index(){
-        $products = Product::all();
-        //dd($products);
-        return view('home', ['products' => $products]);
+        if (session()->exists('admin')){
+            return redirect(route('admin.home'));
+        } else {
+            $products = Product::all();
+            //dd($products);
+            return view('home', ['products' => $products]);
+        }
     }
 
 }
